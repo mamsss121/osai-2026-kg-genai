@@ -1,0 +1,46 @@
+# Datos pesados / con copyright
+data/pdfs/
+data/papers/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+ENV/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secretos
+.env
+*.token
+credentials.json
+
+# Build / packaging
+build/
+dist/
+*.tar.gz
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Fuseki / outputs grandes
+fuseki-data/
+*.log
