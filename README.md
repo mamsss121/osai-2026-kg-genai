@@ -64,8 +64,8 @@ proyecto/
 ├── docs/                       ← documentación + diagrama
 ├── src/                        ← scripts del pipeline (01..08)
 ├── data/                       ← corpus.csv, kg.ttl, prov.ttl, métricas
-│   ├── pdfs/                   ← (ignorado en git)
-│   └── papers/                 ← (ignorado en git)
+│   ├── papers/                 ← PDFs (versionados)
+│   └── extracted/              ← texto extraído por paper (ignorado en git)
 ├── app/                        ← demo Streamlit
 └── ro-crate/                   ← empaquetado FAIR final
 ```

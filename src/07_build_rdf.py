@@ -3,7 +3,7 @@
 
 Lee:
     - data/corpus.csv
-    - data/papers/*.json
+    - data/extracted/*.json
     - data/paper_topics.json + data/topics.json
     - data/similarity.json
     - data/ner_results.json

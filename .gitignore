@@ -1,5 +1,5 @@
 # Outputs regenerables del pipeline (los PDFs sí se versionan para reproducibilidad)
-data/papers/
+data/extracted/
 
 # Python
 __pycache__/

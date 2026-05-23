@@ -31,7 +31,7 @@ Adicionalmente, el pipeline **ejecuta modelos de HuggingFace** (sentence-transfo
 
 ### Codigo
 - Plantillas (boilerplate) para los clientes HTTP de OpenAIRE, HuggingFace Hub y el endpoint SPARQL de Wikidata.
-- Esqueletos de los scripts del pipeline (`01_build_corpus.py`, `02_fetch_pdfs.py`, `03_topic_modeling.py`, `04_similarity.py`, `05_ner_acks.py`, `06_enrich.py`, `07_build_rdf.py`, `08_prov.py`).
+- Esqueletos de los scripts del pipeline (`01_build_corpus.py`, `02_extract_text.py`, `03_topic_modeling.py`, `04_similarity.py`, `05_ner_acks.py`, `06_enrich.py`, `07_build_rdf.py`, `08_prov.py`).
 - Generacion de `docker-compose.yml` para levantar Fuseki + la app Streamlit.
 - Sugerencias de fragmentos via Copilot durante la implementacion.
 

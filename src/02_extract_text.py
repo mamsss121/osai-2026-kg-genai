@@ -1,7 +1,7 @@
 """
 02_extract_text.py — Extrae texto de los PDFs y separa abstract / body / acknowledgements.
 
-Para cada PDF en data/pdfs/, escribe un JSON en data/papers/<arxiv_id>.json con:
+Para cada PDF en data/papers/, escribe un JSON en data/extracted/<arxiv_id>.json con:
     {
         "arxiv_id": "2604.05571",
         "abstract": "...",
@@ -33,8 +33,8 @@ import fitz  # pymupdf
 from tqdm import tqdm
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-PDFS_DIR = PROJECT_ROOT / "data" / "pdfs"
 PAPERS_DIR = PROJECT_ROOT / "data" / "papers"
+EXTRACTED_DIR = PROJECT_ROOT / "data" / "extracted"
 
 ARXIV_ID_RE = re.compile(r"^(\d{4}\.\d{4,5})(v\d+)?\.pdf$")
 
@@ -123,14 +123,14 @@ def process_pdf(pdf_path: Path) -> dict:
 
 
 def main() -> int:
-    if not PDFS_DIR.exists():
-        print(f"ERROR: no existe {PDFS_DIR}", file=sys.stderr)
+    if not PAPERS_DIR.exists():
+        print(f"ERROR: no existe {PAPERS_DIR}", file=sys.stderr)
         return 1
 
-    PAPERS_DIR.mkdir(parents=True, exist_ok=True)
-    pdfs = sorted(PDFS_DIR.glob("*.pdf"))
+    EXTRACTED_DIR.mkdir(parents=True, exist_ok=True)
+    pdfs = sorted(PAPERS_DIR.glob("*.pdf"))
     if not pdfs:
-        print(f"ERROR: no hay PDFs en {PDFS_DIR}", file=sys.stderr)
+        print(f"ERROR: no hay PDFs en {PAPERS_DIR}", file=sys.stderr)
         return 1
 
     stats = {"total": 0, "abstract_ok": 0, "ack_ok": 0}
@@ -144,7 +144,7 @@ def main() -> int:
         except Exception as e:
             print(f"  ERROR procesando {pdf_path.name}: {e}", file=sys.stderr)
             continue
-        out_path = PAPERS_DIR / f"{aid}.json"
+        out_path = EXTRACTED_DIR / f"{aid}.json"
         with out_path.open("w", encoding="utf-8") as fh:
             json.dump(data, fh, ensure_ascii=False, indent=2)
         stats["total"] += 1
@@ -158,7 +158,7 @@ def main() -> int:
         f"Abstract detectado en {stats['abstract_ok']}; "
         f"Acknowledgements en {stats['ack_ok']}."
     )
-    print(f"Salida en: {PAPERS_DIR}")
+    print(f"Salida en: {EXTRACTED_DIR}")
     return 0
 
 

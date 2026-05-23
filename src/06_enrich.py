@@ -37,7 +37,7 @@ except ImportError:
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 CORPUS_CSV = PROJECT_ROOT / "data" / "corpus.csv"
-PAPERS_DIR = PROJECT_ROOT / "data" / "papers"
+EXTRACTED_DIR = PROJECT_ROOT / "data" / "extracted"
 NER_OUT = PROJECT_ROOT / "data" / "ner_results.json"
 ENRICH_OUT = PROJECT_ROOT / "data" / "enrichment.json"
 ORGS_OUT = PROJECT_ROOT / "data" / "orgs_wikidata.json"
@@ -225,7 +225,7 @@ def main() -> int:
         time.sleep(0.5)
 
         # 2. HuggingFace: candidatos del body
-        paper_json = PAPERS_DIR / f"{aid}.json"
+        paper_json = EXTRACTED_DIR / f"{aid}.json"
         body = ""
         if paper_json.exists():
             with paper_json.open("r", encoding="utf-8") as fh:

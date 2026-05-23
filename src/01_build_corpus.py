@@ -1,5 +1,5 @@
 """
-01_build_corpus.py — Construye data/corpus.csv a partir de los PDFs de data/pdfs/.
+01_build_corpus.py — Construye data/corpus.csv a partir de los PDFs de data/papers/.
 
 Lee los nombres de fichero (formato arXiv: 2604.05571v1.pdf), extrae el arxiv_id,
 consulta la API de arXiv para obtener metadatos (title, abstract, authors, primary_category,
@@ -23,7 +23,7 @@ import requests
 from tqdm import tqdm
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-PDFS_DIR = PROJECT_ROOT / "data" / "pdfs"
+PAPERS_DIR = PROJECT_ROOT / "data" / "papers"
 CORPUS_CSV = PROJECT_ROOT / "data" / "corpus.csv"
 
 ARXIV_API = "http://export.arxiv.org/api/query"
@@ -93,13 +93,13 @@ def fetch_arxiv_metadata(arxiv_ids: list[str]) -> dict[str, dict]:
 
 
 def main() -> int:
-    if not PDFS_DIR.exists():
-        print(f"ERROR: no existe {PDFS_DIR}", file=sys.stderr)
+    if not PAPERS_DIR.exists():
+        print(f"ERROR: no existe {PAPERS_DIR}", file=sys.stderr)
         return 1
 
-    pdfs = sorted(PDFS_DIR.glob("*.pdf"))
+    pdfs = sorted(PAPERS_DIR.glob("*.pdf"))
     if not pdfs:
-        print(f"ERROR: no hay PDFs en {PDFS_DIR}", file=sys.stderr)
+        print(f"ERROR: no hay PDFs en {PAPERS_DIR}", file=sys.stderr)
         return 1
 
     arxiv_ids: list[str] = []

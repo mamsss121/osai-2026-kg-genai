@@ -28,7 +28,7 @@ from collections import defaultdict
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-PAPERS_DIR = PROJECT_ROOT / "data" / "papers"
+EXTRACTED_DIR = PROJECT_ROOT / "data" / "extracted"
 NER_OUT = PROJECT_ROOT / "data" / "ner_results.json"
 METRICS_OUT = PROJECT_ROOT / "data" / "ner_metrics.json"
 GOLD_PATH = PROJECT_ROOT / "data" / "gold_standard_ner.jsonl"
@@ -50,7 +50,7 @@ LABEL_NORM = {
 def load_acknowledgements() -> dict[str, str]:
     """Devuelve {arxiv_id: ack_text} para papers con acknowledgements."""
     out: dict[str, str] = {}
-    for p in sorted(PAPERS_DIR.glob("*.json")):
+    for p in sorted(EXTRACTED_DIR.glob("*.json")):
         with p.open("r", encoding="utf-8") as fh:
             data = json.load(fh)
         ack = data.get("acknowledgements", "").strip()
@@ -159,7 +159,7 @@ def compute_metrics(
 def main() -> int:
     texts = load_acknowledgements()
     if not texts:
-        print("ERROR: no hay acknowledgements en data/papers/. Ejecuta 02_extract_text.py.", file=sys.stderr)
+        print("ERROR: no hay acknowledgements en data/extracted/. Ejecuta 02_extract_text.py.", file=sys.stderr)
         return 1
     print(f"Cargados acknowledgements de {len(texts)} papers.")
 

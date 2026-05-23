@@ -1,7 +1,7 @@
 """
 03_topic_modeling.py — Topic modeling sobre abstracts con BERTopic + HuggingFace.
 
-Lee los abstracts de data/papers/*.json, entrena un modelo BERTopic con embeddings de
+Lee los abstracts de data/extracted/*.json, entrena un modelo BERTopic con embeddings de
 sentence-transformers, y vuelca:
     - data/topics.json         : metadatos por topico (id, label, top words, coherence)
     - data/paper_topics.json   : asignacion paper -> topico (con probabilidad)
@@ -22,7 +22,7 @@ import sys
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-PAPERS_DIR = PROJECT_ROOT / "data" / "papers"
+EXTRACTED_DIR = PROJECT_ROOT / "data" / "extracted"
 TOPICS_OUT = PROJECT_ROOT / "data" / "topics.json"
 PAPER_TOPICS_OUT = PROJECT_ROOT / "data" / "paper_topics.json"
 MODEL_DIR = PROJECT_ROOT / "data" / "topic_model"
@@ -35,10 +35,10 @@ MIN_TOPIC_SIZE = 2
 
 
 def load_abstracts() -> tuple[list[str], list[str]]:
-    """Devuelve (paper_ids, abstracts) leidos de data/papers/*.json."""
+    """Devuelve (paper_ids, abstracts) leidos de data/extracted/*.json."""
     paper_ids: list[str] = []
     abstracts: list[str] = []
-    for p in sorted(PAPERS_DIR.glob("*.json")):
+    for p in sorted(EXTRACTED_DIR.glob("*.json")):
         with p.open("r", encoding="utf-8") as fh:
             data = json.load(fh)
         if not data.get("abstract"):

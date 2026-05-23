@@ -60,7 +60,7 @@ def main() -> int:
     entities = {
         "corpus_pdfs": ("dataset", "Corpus of 30 arXiv PDFs"),
         "corpus_csv": ("dataset", "Metadatos del corpus (data/corpus.csv)"),
-        "extracted_text": ("dataset", "Texto extraido por paper (data/papers/*.json)"),
+        "extracted_text": ("dataset", "Texto extraido por paper (data/extracted/*.json)"),
         "embeddings": ("dataset", "Embeddings de los abstracts (data/embeddings.npy)"),
         "topics": ("dataset", "Topicos detectados (data/topics.json + paper_topics.json)"),
         "similarity": ("dataset", "Pares similar_to (data/similarity.json)"),
