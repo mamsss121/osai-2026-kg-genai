@@ -1,4 +1,4 @@
-# KG-GenAI — Knowledge Graph para Gen AI
+# Knowledge Graph para Gen AI
 
 **Acelerador del estado del arte en Inteligencia Artificial Generativa.**
 
