@@ -2,6 +2,9 @@
 [![DOI](https://zenodo.org/badge/1221481993.svg)](https://doi.org/10.5281/zenodo.20363978)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+[![DOI](https://zenodo.org/badge/1221481993.svg)](https://doi.org/10.5281/zenodo.20363978)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Trabajo del **Grupo 2** de la asignatura *Open Science and Artificial Intelligence in Research Software Engineering* (UPM, ETSI Informáticos, Ontology Engineering Group — OEG).
 
 **Integrantes**:
