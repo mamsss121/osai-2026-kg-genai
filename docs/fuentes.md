@@ -1,11 +1,11 @@
 # Fuentes elegidas para el KG
 
 
-| # | Fuente | Tipo | Endpoint | Rol en el KG |
-|---|--------|------|----------|--------------|
-| 1 | **OpenAIRE Graph** | REST API (JSON) | https://graph.openaire.eu/docs/apis/ | Fuente principal de metadatos de papers, autores, organizaciones afiliadas y proyectos/financiacion. |
-| 2 | **HuggingFace Hub** | REST API (JSON) | https://huggingface.co/api/ | Metadatos de los **modelos** y **datasets** mencionados en los papers. |
-| 3 | **Wikidata** | SPARQL | https://query.wikidata.org/sparql (y https://query-scholarly.wikidata.org/sparql) | Enriquecimiento de organizaciones, topics y modelos/datasets famosos con identificadores y etiquetas multilingues. |
+| Fuente | Tipo | Endpoint | Rol en el KG |
+|--------|------|----------|--------------|
+| **OpenAIRE Graph** | REST API (JSON) | https://graph.openaire.eu/docs/apis/ | Fuente principal de metadatos de papers, autores, organizaciones afiliadas y proyectos/financiacion. |
+| **HuggingFace Hub** | REST API (JSON) | https://huggingface.co/api/ | Metadatos de los **modelos** y **datasets** mencionados en los papers. |
+| **Wikidata** | SPARQL | https://query.wikidata.org/sparql (y https://query-scholarly.wikidata.org/sparql) | Enriquecimiento de organizaciones, topics y modelos/datasets famosos con identificadores y etiquetas multilingues. |
 
 ---
 
@@ -22,12 +22,6 @@
 - Para cada `Organization` (afiliacion del autor o agencia financiadora): `legalName`, `country`, `pid` (cuando hay), tipo.
 - Para cada `Project` mencionado en `relProject` del paper: `title`, `acronym`, `code` (grant number), `funder` (EC, NSF, MICIU, ERC...), `fundingStream` (H2020, HORIZON, ERC StG/CoG/AdG), `startDate`, `endDate`.
 - Relacion `Paper -> Project -> Funder (Organization)` con datos canonicos en lugar de cadenas crudas.
-
-**Por que es fuente principal:**
-
-- Es la unica fuente formalmente mencionada en clase (sesion 9) que cubre simultaneamente papers y proyectos/financiacion en un solo endpoint.
-- Cobertura amplia para publicaciones de acceso abierto, especialmente las de proyectos europeos.
-- Permite cerrar la propiedad `acknowledges` y `hasFundingProject` sin depender exclusivamente del NER.
 
 **Ejemplo:**
 ```
@@ -50,8 +44,6 @@ Authorization: Bearer <token>
   - `arxiv_id` referenciado en la card del modelo (permite cerrar el enlace `Paper <-> Model` sin ambiguedad).
 - Para cada `Dataset` (p.ej. `openai/gsm8k`, `lmsys/chatbot_arena_conversations`, `HuggingFaceH4/ultrafeedback_binarized`):
   - `datasetId` canonico, `task_categories`, `language`, `size_categories`, `license`.
-
-**Por que es necesaria:** justifica formalmente el origen de las clases `Model` y `Dataset` del diagrama (feedback explicito del profesor en la entrega 1). HuggingFace es el registro de facto en el dominio GenAI.
 
 **Ejemplos:**
 ```
