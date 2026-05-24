@@ -1,4 +1,4 @@
-# Ontologia (entidad-relacion) - dominio GenAI
+# Ontología del proyecto
 
 Esta ontologia incluye los **elementos minimos vistos en clase**:
 
@@ -7,12 +7,6 @@ Esta ontologia incluye los **elementos minimos vistos en clase**:
 - **Propiedades base:** `belongs_to_topic`, `similar_to`, `title`, `name`, `acknowledges`.
 - **>=5 propiedades adicionales** procedentes de fuentes externas (OpenAIRE, HuggingFace, Wikidata).
 
-Namespace del proyecto:
-```
-@prefix ns: <https://w3id.org/oeg/grupo2/ontology#> .
-```
-
-Reutilizamos donde sea posible terminos de **schema.org**, **FOAF**, **DCTerms**, **BIBO**, **SKOS**, **DCAT** y **MLS** (https://ml-schema.github.io/) para los conceptos especificos de modelos y datasets de ML.
 
 ## Tags de origen de las propiedades
 
@@ -23,7 +17,7 @@ Reutilizamos donde sea posible terminos de **schema.org**, **FOAF**, **DCTerms**
 | **[WD]** | Wikidata | SPARQL |
 | **[INT]** | Procesado interno (topic modeling, similitud, NER) | - |
 
-## Diagrama (Mermaid)
+## Diagrama 
 ```mermaid
 classDiagram
     class Paper {
@@ -141,14 +135,6 @@ classDiagram
 | `ns:downloads` | `Model` | `xsd:integer` | [HF] |
 | `ns:datasetId` | `Dataset` | `xsd:string` | [HF] |
 | `ns:taskCategory` | `Dataset` | `xsd:string` | [HF] |
-
-## Cambios respecto a la v1 (tras feedback del profesor)
-
-- **Eliminada** la propiedad `cites` (Paper -> Paper): dependia de OpenAlex, que esta restringido.
-- **Eliminada** la propiedad `orcid` en `Person`: ORCID esta restringido.
-- **Eliminadas** las propiedades `arxivId`, `citationCount` y `rorId`: dependian de OpenAlex / ROR.
-- **Sustituido** OpenAlex por **OpenAIRE Graph** como fuente principal de papers, autores, organizaciones y proyectos/financiacion.
-- **Confirmado** HuggingFace Hub como fuente formal de las clases `Model` y `Dataset` (en respuesta al feedback "no decis de donde sale Model o Dataset").
 
 ## Notas sobre la modelizacion
 

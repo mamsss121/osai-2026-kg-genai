@@ -22,7 +22,7 @@
 
 - **Decisión final** sobre el caso de uso, el stack de fuentes y la estructura de la ontologia: tomada por el grupo despues de discutir las opciones.
 - **Selección del corpus** de 30 papers: hecha manualmente por los miembros del grupo.
-- **Interpretación** de los resultados de las metricas (precision/recall/F1 del NER, silhouette y coherence del topic modeling).
+- **Interpretación** de los resultados de las métricas (precision/recall/F1 del NER, silhouette y coherence del topic modeling).
 - **Validación del KG generado**: comprobación de que las triples tienen sentido y de que las URIs estan bien construidas.
 - **Decisiones de modelado** en casos ambiguos (e.g., como representar el score de `similar_to`, si fusionar `usesModel`/`evaluatesModel`).
 - **Preparación y ensayo** de la presentacion oral.
@@ -36,5 +36,5 @@ Todos los outputs producidos por IA (texto, codigo, diagrama) han sido:
 3. **Verificados** comparando con la documentacion oficial de las fuentes (OpenAIRE API, HuggingFace docs, Wikidata) y con las transparencias de la asignatura.
 4. **Aprobados** por consenso del grupo antes de subirse al repositorio.
 
-Ningún fragmento se ha incluido sin revision.
+## **Ningún fragmento se ha incluido sin revision.**
 
