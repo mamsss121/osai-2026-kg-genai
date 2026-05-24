@@ -1,10 +1,6 @@
 # Caso de uso
 
-## Titulo
-**Acelerador de estado del arte (state of the art) sobre IA generativa: organizando un corpus de 30 papers para la fase de revision bibliografica de una tesis.**
-
-## Usuario objetivo
-Un **investigador junior** (doctorando o estudiante de master de IA) que inicia un trabajo en alguna subarea de la Inteligencia Artificial Generativa (LLMs, modelos de difusion, multimodal, RLHF, agentes, evaluacion...). Necesita escribir el **capitulo de estado del arte** de su tesis o la seccion *Related Work* del primer paper que envie a una conferencia.
+Un **investigador junior** (doctorando o estudiante de master de IA) que inicia un trabajo en alguna subarea de la Inteligencia Artificial Generativa (LLMs, modelos de difusion, multimodal, RLHF, agentes, evaluacion...). Necesita escribir el **capitulo de estado del arte** de su tesis o la seccion *Related Work* del paper.
 
 ## Problema concreto
 
@@ -68,7 +64,3 @@ Esta acotacion es deliberada: el caso de uso es exactamente el de un investigado
 | Use HuggingFace as ML platform | BERTopic, sentence-transformers, modelo NER + Hub API para Model/Dataset |
 | Sample run (PROV) | Traza del pipeline asociada al corpus concreto |
 | Research Object (RO-Crate) | Paquete reproducible del corpus + KG + codigo para que otro investigador junior pueda aplicarlo a sus 30 papers |
-
-## Por que este caso de uso (y no otro)
-
-Hemos descartado otros perfiles (oficina de transferencia tecnologica, gestor de I+D empresarial, periodista tecnologico) porque **30 papers no son una muestra estadisticamente representativa del ecosistema mundial**. Conclusiones tipo *"top 5 organizaciones europeas en RLHF"* serian debiles con ese tamano de corpus. El caso de "investigador acotando su propio corpus de revision" en cambio **no extrapola** y es exactamente el tamano natural de una bibliografia inicial.

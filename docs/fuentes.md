@@ -1,6 +1,5 @@
-# Fuentes elegidas para el Knowledge Graph (dominio GenAI)
+# Fuentes elegidas para el KG
 
-Cumplimos el requisito de la asignatura: **>=1 fuente RDF (SPARQL)** y **>=1 fuente REST**, y mas de **5 propiedades** procedentes de fuentes externas. Stack final: 2 fuentes REST + 1 SPARQL.
 
 | # | Fuente | Tipo | Endpoint | Rol en el KG |
 |---|--------|------|----------|--------------|
@@ -8,11 +7,9 @@ Cumplimos el requisito de la asignatura: **>=1 fuente RDF (SPARQL)** y **>=1 fue
 | 2 | **HuggingFace Hub** | REST API (JSON) | https://huggingface.co/api/ | Metadatos de los **modelos** y **datasets** mencionados en los papers. |
 | 3 | **Wikidata** | SPARQL | https://query.wikidata.org/sparql (y https://query-scholarly.wikidata.org/sparql) | Enriquecimiento de organizaciones, topics y modelos/datasets famosos con identificadores y etiquetas multilingues. |
 
-> **Nota:** No se utiliza OpenAlex ni ORCID por restriccion explicita del profesor en el feedback de la entrega 1.
-
 ---
 
-## 1. OpenAIRE Graph (REST) - fuente principal
+## 1. OpenAIRE Graph (REST) 
 
 **Endpoint base:** `https://api.openaire.eu/graph/v1/`
 **Documentacion:** https://graph.openaire.eu/docs/apis/
@@ -118,5 +115,3 @@ Leyenda de tags: **[OAIRE]** OpenAIRE Graph, **[HF]** HuggingFace Hub, **[WD]** 
 | `usesDataset` (Paper -> Dataset) | [INT] + [HF] |
 | `developedBy` (Model -> Organization) | [HF] + [WD] |
 | `publishedBy` (Dataset -> Organization) | [HF] + [WD] |
-
-Total: **14 propiedades de fuentes externas** (OAIRE + HF + WD), muy por encima del minimo (>=5).
