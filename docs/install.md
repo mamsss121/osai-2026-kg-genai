@@ -82,8 +82,9 @@ Puedes lanzar queries directamente contra Fuseki en `http://localhost:3030/kg/sp
 
 **Top 5 organizaciones más activas:**
 
-\```sparql
+​```sparql
 PREFIX ns: <https://w3id.org/oeg/grupo2/ontology#>
+
 SELECT ?org (COUNT(?paper) AS ?n) WHERE {
   ?paper a ns:Paper ;
          ns:hasAuthor ?author .
@@ -92,19 +93,20 @@ SELECT ?org (COUNT(?paper) AS ?n) WHERE {
 GROUP BY ?org
 ORDER BY DESC(?n)
 LIMIT 5
-\```
+​```
 
 **Papers similares entre sí (similitud > 0.7):**
 
-\```sparql
+​```sparql
 PREFIX ns: <https://w3id.org/oeg/grupo2/ontology#>
+
 SELECT ?paperA ?paperB ?score WHERE {
   ?paperA ns:similar_to ?pair .
   ?pair ns:hasPair ?paperB ;
         ns:similarityScore ?score .
   FILTER(?score > 0.7)
 }
-\```
+​```
 
 ## Reproducibilidad
 
