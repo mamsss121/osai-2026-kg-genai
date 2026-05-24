@@ -35,6 +35,9 @@ try:
 except ImportError:
     pass
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _prov_logger import start_activity, end_activity  # noqa: E402
+
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 CORPUS_CSV = PROJECT_ROOT / "data" / "corpus.csv"
 EXTRACTED_DIR = PROJECT_ROOT / "data" / "extracted"
@@ -203,6 +206,21 @@ def main() -> int:
     rows = read_corpus()
     print(f"Corpus: {len(rows)} papers.")
 
+    start_activity(
+        "enrich",
+        params={
+            "sources": ["OpenAIRE Graph", "HuggingFace Hub", "Wikidata SPARQL"],
+            "endpoints": {
+                "openaire": OPENAIRE_API,
+                "huggingface": HF_API,
+                "wikidata": WIKIDATA_SPARQL,
+            },
+            "num_papers": len(rows),
+            "openaire_authenticated": bool(OPENAIRE_TOKEN),
+        },
+        inputs=[CORPUS_CSV, EXTRACTED_DIR, NER_OUT if NER_OUT.exists() else CORPUS_CSV],
+    )
+
     enrichment: dict[str, dict] = {}
     org_cache: dict[str, dict] = {}
 
@@ -266,6 +284,7 @@ def main() -> int:
 
     print(f"\nEnriquecimiento guardado en {ENRICH_OUT.name}")
     print(f"Organizaciones Wikidata: {len(org_cache)} resueltas, guardadas en {ORGS_OUT.name}")
+    end_activity("enrich", outputs=[ENRICH_OUT, ORGS_OUT])
     return 0
 
 

@@ -1,6 +1,20 @@
-version: "3.9"
-
 services:
+  # ---------------------------------------------------------------
+  # Grobid — extraccion estructurada de PDFs cientificos (paso 02)
+  # ---------------------------------------------------------------
+  grobid:
+    image: lfoppiano/grobid:0.8.1
+    container_name: kg-genai-grobid
+    ports:
+      - "8070:8070"
+    init: true
+    ulimits:
+      core: 0
+    restart: unless-stopped
+
+  # ---------------------------------------------------------------
+  # Fuseki — triple store que sirve el KG (kg.ttl)
+  # ---------------------------------------------------------------
   fuseki:
     image: stain/jena-fuseki:5.0.0
     container_name: kg-genai-fuseki
@@ -14,6 +28,9 @@ services:
       - ./data/kg.ttl:/staging/kg.ttl:ro
     restart: unless-stopped
 
+  # ---------------------------------------------------------------
+  # App Streamlit — demo de consultas sobre el KG
+  # ---------------------------------------------------------------
   app:
     build:
       context: .

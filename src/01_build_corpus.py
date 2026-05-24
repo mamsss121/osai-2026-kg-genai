@@ -22,6 +22,9 @@ from xml.etree import ElementTree as ET
 import requests
 from tqdm import tqdm
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _prov_logger import start_activity, end_activity  # noqa: E402
+
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 PAPERS_DIR = PROJECT_ROOT / "data" / "papers"
 CORPUS_CSV = PROJECT_ROOT / "data" / "corpus.csv"
@@ -93,6 +96,11 @@ def fetch_arxiv_metadata(arxiv_ids: list[str]) -> dict[str, dict]:
 
 
 def main() -> int:
+    start_activity(
+        "build_corpus",
+        params={"source": "arXiv API", "endpoint": ARXIV_API},
+        inputs=[PAPERS_DIR],
+    )
     if not PAPERS_DIR.exists():
         print(f"ERROR: no existe {PAPERS_DIR}", file=sys.stderr)
         return 1
@@ -143,6 +151,7 @@ def main() -> int:
             w.writerow({k: row.get(k, "") for k in fields})
 
     print(f"Escrito {CORPUS_CSV} con {len(arxiv_ids)} filas.")
+    end_activity("build_corpus", outputs=[CORPUS_CSV])
     return 0
 
 

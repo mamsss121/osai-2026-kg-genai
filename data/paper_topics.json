@@ -1,0 +1,152 @@
+[
+  {
+    "arxiv_id": "2505.16311",
+    "topic_id": 0,
+    "probability": 0.8421830844205556
+  },
+  {
+    "arxiv_id": "2507.14681",
+    "topic_id": 0,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2507.17066",
+    "topic_id": 0,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2508.06470",
+    "topic_id": 1,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2508.17554",
+    "topic_id": 0,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2509.00073",
+    "topic_id": 0,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2509.26146",
+    "topic_id": 0,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2510.07623",
+    "topic_id": 1,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2510.11754",
+    "topic_id": 0,
+    "probability": 0.9929211882917289
+  },
+  {
+    "arxiv_id": "2510.12255",
+    "topic_id": 0,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2510.15782",
+    "topic_id": 0,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2510.18169",
+    "topic_id": 0,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2510.21027",
+    "topic_id": 0,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2510.24551",
+    "topic_id": 0,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2510.24594",
+    "topic_id": 1,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2511.15994",
+    "topic_id": 0,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2512.06018",
+    "topic_id": 0,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2512.14641",
+    "topic_id": 1,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2601.03880",
+    "topic_id": 1,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2602.08121",
+    "topic_id": 0,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2602.19401",
+    "topic_id": 1,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2603.05647",
+    "topic_id": 1,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2603.16204",
+    "topic_id": 1,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2603.16918",
+    "topic_id": 1,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2603.19093",
+    "topic_id": 1,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2604.13381",
+    "topic_id": 1,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2604.21352",
+    "topic_id": 1,
+    "probability": 0.8911829627306493
+  },
+  {
+    "arxiv_id": "2604.22610",
+    "topic_id": 0,
+    "probability": 0.9121155458977303
+  },
+  {
+    "arxiv_id": "2605.03512",
+    "topic_id": 1,
+    "probability": 1.0
+  },
+  {
+    "arxiv_id": "2605.16279",
+    "topic_id": 1,
+    "probability": 1.0
+  }
+]

@@ -27,6 +27,9 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _prov_logger import start_activity, end_activity  # noqa: E402
+
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 EXTRACTED_DIR = PROJECT_ROOT / "data" / "extracted"
 NER_OUT = PROJECT_ROOT / "data" / "ner_results.json"
@@ -60,7 +63,14 @@ def load_acknowledgements() -> dict[str, str]:
 
 
 def load_gold_standard() -> dict[str, list[dict]]:
-    """Carga el gold standard, formato JSONL."""
+    """
+    Carga el gold standard (JSONL).
+
+    Soporta dos formatos por entidad:
+        - Con offsets: {"start": int, "end": int, "label": str}
+        - Sin offsets, solo texto: {"text": str, "label": str}
+          (el script computa start/end buscando la cadena en el texto)
+    """
     out: dict[str, list[dict]] = {}
     if not GOLD_PATH.exists():
         return out
@@ -70,7 +80,34 @@ def load_gold_standard() -> dict[str, list[dict]]:
             if not line:
                 continue
             rec = json.loads(line)
-            out[rec["arxiv_id"]] = rec.get("entities", [])
+            aid = rec["arxiv_id"]
+            full_text = rec.get("text", "")
+            entities = []
+            for ent in rec.get("entities", []):
+                label = ent.get("label", "MISC")
+                # Si ya viene con offsets, lo guardamos tal cual
+                if "start" in ent and "end" in ent:
+                    entities.append(
+                        {"start": int(ent["start"]), "end": int(ent["end"]), "label": label}
+                    )
+                    continue
+                # Sin offsets: localizar la cadena en el texto del paper
+                snippet = (ent.get("text") or "").strip()
+                if not snippet or not full_text:
+                    continue
+                idx = full_text.find(snippet)
+                if idx == -1:
+                    # Intentar case-insensitive
+                    idx_low = full_text.lower().find(snippet.lower())
+                    if idx_low == -1:
+                        print(
+                            f"  [gold] AVISO: no se encuentra '{snippet}' en {aid}; entidad ignorada.",
+                            file=sys.stderr,
+                        )
+                        continue
+                    idx = idx_low
+                entities.append({"start": idx, "end": idx + len(snippet), "label": label})
+            out[aid] = entities
     return out
 
 
@@ -166,6 +203,17 @@ def main() -> int:
     gold = load_gold_standard()
     print(f"Gold standard: {len(gold)} papers anotados.")
 
+    start_activity(
+        "ner",
+        params={
+            "models": list(MODELS.values()),
+            "aggregation_strategy": "simple",
+            "num_papers_with_acks": len(texts),
+            "gold_standard_size": len(gold),
+        },
+        inputs=[EXTRACTED_DIR, GOLD_PATH if GOLD_PATH.exists() else EXTRACTED_DIR],
+    )
+
     all_results: dict[str, dict] = {}
     all_metrics: dict[str, dict] = {}
 
@@ -226,6 +274,10 @@ def main() -> int:
         print("Formato: una linea por paper, ej.:")
         print('  {"arxiv_id":"2604.05571","text":"...","entities":[{"start":12,"end":34,"label":"ORG"}]}')
 
+    outputs = [NER_OUT]
+    if METRICS_OUT.exists():
+        outputs.append(METRICS_OUT)
+    end_activity("ner", outputs=outputs)
     return 0
 
 

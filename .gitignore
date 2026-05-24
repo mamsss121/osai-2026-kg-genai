@@ -1,5 +1,9 @@
 # Outputs regenerables del pipeline (los PDFs sí se versionan para reproducibilidad)
 data/extracted/
+data/embeddings.npy
+
+# Transparencias del profesor (materiales del curso, no se redistribuyen)
+pdfs/
 
 # Python
 __pycache__/

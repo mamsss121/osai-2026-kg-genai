@@ -21,6 +21,9 @@ import json
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _prov_logger import start_activity, end_activity  # noqa: E402
+
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 EXTRACTED_DIR = PROJECT_ROOT / "data" / "extracted"
 TOPICS_OUT = PROJECT_ROOT / "data" / "topics.json"
@@ -32,6 +35,23 @@ EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 # Con 30 papers, no podemos tener muchos topicos. Configuramos min_topic_size=2
 # para permitir topicos pequenos. nr_topics='auto' deja que HDBSCAN decida.
 MIN_TOPIC_SIZE = 2
+
+# Stopwords adicionales especificas del dominio.
+# El corpus entero es de IA generativa, asi que "ai", "genai", "model"... no
+# diferencian entre subtemas. Se anaden a las stopwords standard del ingles.
+DOMAIN_STOPWORDS = [
+    "ai", "genai", "model", "models", "modeling",
+    "llm", "llms", "large", "language",
+    "use", "using", "used", "uses",
+    "study", "studies", "paper", "papers",
+    "result", "results", "show", "shows", "showed",
+    "method", "methods", "approach", "approaches",
+    "based", "novel", "new", "propose", "proposed", "proposes",
+    "work", "works", "task", "tasks",
+    "data", "dataset", "datasets",
+    "performance", "evaluation", "evaluate", "evaluated",
+    "system", "systems",
+]
 
 
 def load_abstracts() -> tuple[list[str], list[str]]:
@@ -53,6 +73,8 @@ def main() -> int:
     try:
         from bertopic import BERTopic
         from sentence_transformers import SentenceTransformer
+        from sklearn.feature_extraction.text import CountVectorizer
+        from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
     except ImportError as e:
         print(
             f"ERROR: faltan dependencias ({e}). Instala con:\n"
@@ -67,15 +89,38 @@ def main() -> int:
         return 1
     print(f"Cargados {len(paper_ids)} abstracts.")
 
+    start_activity(
+        "topic_modeling",
+        params={
+            "embedding_model": EMBEDDING_MODEL,
+            "min_topic_size": MIN_TOPIC_SIZE,
+            "vectorizer_ngram_range": "1-2",
+            "vectorizer_min_df": 2,
+            "domain_stopwords_count": len(DOMAIN_STOPWORDS),
+            "num_abstracts": len(paper_ids),
+        },
+        inputs=[EXTRACTED_DIR],
+    )
+
     # 1. Embeddings (los reutilizara tambien 04_similarity.py)
     print(f"Calculando embeddings con {EMBEDDING_MODEL}...")
     embedder = SentenceTransformer(EMBEDDING_MODEL)
     embeddings = embedder.encode(abstracts, show_progress_bar=True)
 
-    # 2. BERTopic
+    # 2. BERTopic con vectorizer cuidado:
+    #    - stopwords del ingles + dominio
+    #    - unigrams + bigrams (para que salgan terminos compuestos)
+    #    - min_df=2: descarta palabras que solo aparecen en un paper
+    custom_stopwords = list(ENGLISH_STOP_WORDS) + DOMAIN_STOPWORDS
+    vectorizer = CountVectorizer(
+        stop_words=custom_stopwords,
+        ngram_range=(1, 2),
+        min_df=2,
+    )
     print("Entrenando BERTopic...")
     topic_model = BERTopic(
         embedding_model=embedder,
+        vectorizer_model=vectorizer,
         min_topic_size=MIN_TOPIC_SIZE,
         verbose=True,
     )
@@ -135,6 +180,10 @@ def main() -> int:
 
     print(f"\nGenerado: {TOPICS_OUT.name}, {PAPER_TOPICS_OUT.name}, embeddings.npy")
     print(f"Topicos: {len([t for t in topics_out if not t['is_outlier']])} (+ outliers)")
+    end_activity(
+        "topic_modeling",
+        outputs=[TOPICS_OUT, PAPER_TOPICS_OUT, emb_path, ids_path],
+    )
     return 0
 
 

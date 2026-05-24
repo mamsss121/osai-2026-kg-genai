@@ -30,6 +30,9 @@ from pathlib import Path
 from rdflib import Graph, Literal, Namespace, URIRef
 from rdflib.namespace import RDF, RDFS, XSD, OWL
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _prov_logger import start_activity, end_activity  # noqa: E402
+
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DATA = PROJECT_ROOT / "data"
 
@@ -51,6 +54,23 @@ def load_json(path: Path, default=None):
 
 
 def main() -> int:
+    start_activity(
+        "build_rdf",
+        params={
+            "namespace": str(NS),
+            "library": "rdflib",
+            "format": "turtle",
+        },
+        inputs=[
+            DATA / "corpus.csv",
+            DATA / "paper_topics.json",
+            DATA / "topics.json",
+            DATA / "similarity.json",
+            DATA / "ner_results.json",
+            DATA / "enrichment.json",
+            DATA / "orgs_wikidata.json",
+        ],
+    )
     g = Graph()
     g.bind("ns", NS)
     g.bind("res", RES)
@@ -280,6 +300,7 @@ def main() -> int:
     out_ttl = DATA / "kg.ttl"
     g.serialize(destination=str(out_ttl), format="turtle")
     print(f"Generado {out_ttl} con {len(g)} triples.")
+    end_activity("build_rdf", outputs=[out_ttl])
     return 0
 
 

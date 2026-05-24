@@ -1,0 +1,98 @@
+[
+  {
+    "topic_id": 0,
+    "is_outlier": false,
+    "size": 16,
+    "label": "0_clinical_healthcare_patient_treatment",
+    "top_words": [
+      {
+        "word": "clinical",
+        "score": 0.13416030801123602
+      },
+      {
+        "word": "healthcare",
+        "score": 0.0678283521347188
+      },
+      {
+        "word": "patient",
+        "score": 0.06547500668885281
+      },
+      {
+        "word": "treatment",
+        "score": 0.05186048122118412
+      },
+      {
+        "word": "health",
+        "score": 0.051676357273116695
+      },
+      {
+        "word": "care",
+        "score": 0.050637896343717084
+      },
+      {
+        "word": "learning",
+        "score": 0.046098205529941434
+      },
+      {
+        "word": "potential",
+        "score": 0.04310890958384633
+      },
+      {
+        "word": "quality",
+        "score": 0.042092051293455716
+      },
+      {
+        "word": "context",
+        "score": 0.042092051293455716
+      }
+    ]
+  },
+  {
+    "topic_id": 1,
+    "is_outlier": false,
+    "size": 14,
+    "label": "1_health_support_generative_chatbots",
+    "top_words": [
+      {
+        "word": "health",
+        "score": 0.14859546910663274
+      },
+      {
+        "word": "support",
+        "score": 0.09618808202472003
+      },
+      {
+        "word": "generative",
+        "score": 0.08834798573548665
+      },
+      {
+        "word": "chatbots",
+        "score": 0.07321747735933296
+      },
+      {
+        "word": "privacy",
+        "score": 0.067061572164886
+      },
+      {
+        "word": "design",
+        "score": 0.05417793410135951
+      },
+      {
+        "word": "intelligence",
+        "score": 0.053203840545706836
+      },
+      {
+        "word": "risks",
+        "score": 0.051872476292795684
+      },
+      {
+        "word": "artificial intelligence",
+        "score": 0.04876014069122356
+      },
+      {
+        "word": "artificial",
+        "score": 0.04876014069122356
+      }
+    ]
+  }
+]
