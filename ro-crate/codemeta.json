@@ -1,0 +1,82 @@
+{
+    "@context": "https://w3id.org/codemeta/3.0",
+    "applicationCategory": "Knowledge Graph",
+    "author": [
+        {
+            "@id": "https://github.com/mamsss121",
+            "@type": "Person",
+            "givenName": "Mamoun",
+            "familyName": "Tahri Jautei Hassani"
+        },
+        {
+            "@type": "Person",
+            "givenName": "Julián Alberto",
+            "familyName": "Villafuerte Zevallos"
+        },
+        {
+            "@type": "Person",
+            "givenName": "Alberto",
+            "familyName": "Barranquero Fernández"
+        }
+    ],
+    "codeRepository": "https://github.com/mamsss121/osai-2026-kg-genai",
+    "dateCreated": "2026-04-26",
+    "dateModified": "2026-05-24",
+    "datePublished": "2026-05-24",
+    "downloadUrl": "https://github.com/mamsss121/osai-2026-kg-genai/releases",
+    "identifier": "https://doi.org/10.5281/zenodo.20363978",
+    "license": "https://spdx.org/licenses/MIT.html",
+    "name": "osai-2026-kg-genai",
+    "programmingLanguage": "Python",
+    "referencePublication": [
+        {
+            "author": [
+                {
+                    "@type": "Person",
+                    "givenName": "Mamoun",
+                    "familyName": "Tahri Jautei Hassani"
+                },
+                {
+                    "@type": "Person",
+                    "givenName": "Julián Alberto",
+                    "familyName": "Villafuerte Zevallos"
+                },
+                {
+                    "@type": "Person",
+                    "givenName": "Alberto",
+                    "familyName": "Barranquero Fernández"
+                }
+            ],
+            "datePublished": "2026",
+            "identifier": "10.5281/zenodo.20363979",
+            "name": "KG-GenAI: Knowledge Graph for State-of-the-Art Review of Generative AI Papers",
+            "url": "https://doi.org/10.5281/zenodo.20363979",
+            "@type": "ScholarlyArticle"
+        }
+    ],
+    "releaseNotes": "Acelerador de estado del arte (state of the art) sobre IA generativa: un investigador junior con 30 papers candidatos de arXiv obtiene en minutos lo que de otra forma le llevaría 2-3 semanas de lectura manual: subáreas, papers seminales, autores referencia, modelos/datasets compartidos y panorama de financiación.",
+    "softwareRequirements": [
+        {"name": "requests", "version": ">=2.31.0"},
+        {"name": "pandas", "version": ">=2.0.0"},
+        {"name": "tqdm", "version": ">=4.66.0"},
+        {"name": "python-dotenv", "version": ">=1.0.0"},
+        {"name": "pdfplumber", "version": ">=0.10.0"},
+        {"name": "pymupdf", "version": ">=1.23.0"},
+        {"name": "torch", "version": ">=2.0.0"},
+        {"name": "transformers", "version": ">=4.40.0"},
+        {"name": "sentence-transformers", "version": ">=2.7.0"},
+        {"name": "bertopic", "version": ">=0.16.0"},
+        {"name": "hdbscan", "version": ">=0.8.33"},
+        {"name": "umap-learn", "version": ">=0.5.5"},
+        {"name": "rdflib", "version": ">=7.0.0"},
+        {"name": "prov", "version": ">=2.0.0"},
+        {"name": "SPARQLWrapper", "version": ">=2.0.0"},
+        {"name": "streamlit", "version": ">=1.32.0"},
+        {"name": "rocrate", "version": ">=0.10.0"},
+        {"name": "scikit-learn", "version": ">=1.4.0"},
+        {"name": "nltk", "version": ">=3.8.0"}
+    ],
+    "version": "v1.0.0",
+    "issueTracker": "https://github.com/mamsss121/osai-2026-kg-genai/issues",
+    "@type": "SoftwareSourceCode"
+}

@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  fuseki:
+    image: stain/jena-fuseki:5.0.0
+    container_name: kg-genai-fuseki
+    ports:
+      - "3030:3030"
+    environment:
+      ADMIN_PASSWORD: admin
+      FUSEKI_DATASET_1: kg
+    volumes:
+      - ./fuseki-data:/fuseki
+      - ./data/kg.ttl:/staging/kg.ttl:ro
+    restart: unless-stopped
+
+  app:
+    build:
+      context: .
+      dockerfile: app/Dockerfile
+    container_name: kg-genai-app
+    ports:
+      - "8501:8501"
+    environment:
+      FUSEKI_ENDPOINT: http://fuseki:3030/kg/sparql
+    depends_on:
+      - fuseki
+    volumes:
+      - ./data:/app/data:ro

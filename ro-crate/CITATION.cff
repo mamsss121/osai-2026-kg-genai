@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+title: >-
+  KG-GenAI: Knowledge Graph for State-of-the-Art Review of
+  Generative AI Papers
+message: 'If you use this software, please cite it as below.'
+type: software
+authors:
+  - family-names: Tahri Jautei Hassani
+    given-names: Mamoun
+  - family-names: Villafuerte Zevallos
+    given-names: Julián Alberto
+  - family-names: Barranquero Fernández
+    given-names: Alberto
+license: MIT
+preferred-citation:
+  type: software
+  title: >-
+    KG-GenAI: Knowledge Graph for State-of-the-Art Review of Generative AI
+    Papers
+  authors:
+    - family-names: Tahri Jautei Hassani
+      given-names: Mamoun
+    - family-names: Villafuerte Zevallos
+      given-names: Julián Alberto
+    - family-names: Barranquero Fernández
+      given-names: Alberto
+  year: 2026
+  doi: 10.5281/zenodo.20363979

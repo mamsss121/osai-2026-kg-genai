@@ -1,0 +1,38 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Compile all sources
+        run: python -m compileall -q src/
+
+      - name: Validate CITATION.cff
+        run: |
+          pip install cffconvert
+          cffconvert --validate
+
+      - name: Validate codemeta.json
+        run: python -c "import json; json.load(open('codemeta.json'))"
+
+      - name: Validate RO-Crate
+        run: python -c "from rocrate.rocrate import ROCrate; ROCrate('ro-crate')"
+
+      - name: Test with pytest
+        run: pytest
+    

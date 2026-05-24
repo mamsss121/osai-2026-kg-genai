@@ -1,0 +1,154 @@
+{
+    "@context": "https://w3id.org/ro/crate/1.2/context",
+    "@graph": [
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "creator": [
+                {
+                    "@id": "#mamoun",
+                    "@type": "Person",
+                    "name": "Mamoun Tahri Jautei Hassani"
+                },
+                {
+                    "@id": "#julian",
+                    "@type": "Person",
+                    "name": "Julián Alberto Villafuerte Zevallos"
+                },
+                {
+                    "@id": "#alberto",
+                    "@type": "Person",
+                    "name": "Alberto Barranquero Fernández"
+                }
+            ],
+            "datePublished": "2026-05-24T09:29:18+00:00",
+            "description": "Knowledge Graph construido a partir de 30 papers de arXiv sobre IA Generativa, enriquecido con OpenAIRE Graph, Wikidata y Hugging Face Hub. Incluye topic modeling, similitud entre papers y NER sobre acknowledgements.",
+            "hasPart": [
+                {
+                    "@id": "data/corpus.csv"
+                },
+                {
+                    "@id": "src/01_build_corpus.py"
+                },
+                {
+                    "@id": "src/02_extract_text.py"
+                },
+                {
+                    "@id": "src/03_topic_modeling.py"
+                },
+                {
+                    "@id": "src/04_similarity.py"
+                },
+                {
+                    "@id": "src/05_ner_acks.py"
+                },
+                {
+                    "@id": "src/06_enrich.py"
+                },
+                {
+                    "@id": "src/07_build_rdf.py"
+                },
+                {
+                    "@id": "src/08_prov.py"
+                },
+                {
+                    "@id": "src/09_ro_crate.py"
+                },
+                {
+                    "@id": "README.md"
+                },
+                {
+                    "@id": "LICENSE"
+                },
+                {
+                    "@id": "CITATION.cff"
+                },
+                {
+                    "@id": "codemeta.json"
+                },
+                {
+                    "@id": "requirements.txt"
+                },
+                {
+                    "@id": "docker-compose.yml"
+                }
+            ],
+            "license": "https://spdx.org/licenses/MIT.html",
+            "name": "KG-GenAI: Knowledge Graph for State-of-the-Art Review of Generative AI Papers"
+        },
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "about": {
+                "@id": "./"
+            },
+            "conformsTo": {
+                "@id": "https://w3id.org/ro/crate/1.2"
+            }
+        },
+        {
+            "@id": "data/corpus.csv",
+            "@type": "File"
+        },
+        {
+            "@id": "src/01_build_corpus.py",
+            "@type": "File"
+        },
+        {
+            "@id": "src/02_extract_text.py",
+            "@type": "File"
+        },
+        {
+            "@id": "src/03_topic_modeling.py",
+            "@type": "File"
+        },
+        {
+            "@id": "src/04_similarity.py",
+            "@type": "File"
+        },
+        {
+            "@id": "src/05_ner_acks.py",
+            "@type": "File"
+        },
+        {
+            "@id": "src/06_enrich.py",
+            "@type": "File"
+        },
+        {
+            "@id": "src/07_build_rdf.py",
+            "@type": "File"
+        },
+        {
+            "@id": "src/08_prov.py",
+            "@type": "File"
+        },
+        {
+            "@id": "src/09_ro_crate.py",
+            "@type": "File"
+        },
+        {
+            "@id": "README.md",
+            "@type": "File"
+        },
+        {
+            "@id": "LICENSE",
+            "@type": "File"
+        },
+        {
+            "@id": "CITATION.cff",
+            "@type": "File"
+        },
+        {
+            "@id": "codemeta.json",
+            "@type": "File"
+        },
+        {
+            "@id": "requirements.txt",
+            "@type": "File"
+        },
+        {
+            "@id": "docker-compose.yml",
+            "@type": "File"
+        }
+    ]
+}
