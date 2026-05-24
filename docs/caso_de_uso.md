@@ -51,16 +51,4 @@ El investigador puede tomar las siguientes decisiones para estructurar su estado
 
 Este KG **no pretende** ser representativo del estado del arte global de la IA Generativa. Trabaja sobre un corpus acotado y conocido de 30 papers seleccionados por el usuario. Las conclusiones que se extraen son **locales al corpus** (que autores estan en *este* corpus, que modelos comparten *estos* papers concretos) y no extrapolables al ecosistema mundial.
 
-Esta acotacion es deliberada: el caso de uso es exactamente el de un investigador que ya ha hecho la busqueda inicial y necesita ordenar los candidatos, no el de quien quiere descubrir nuevos papers fuera del corpus.
 
-## Relacion con los entregables del enunciado
-
-| Requisito del enunciado | Como lo cubre el caso de uso |
-|---|---|
-| Topic modeling on your chosen papers | Subareas que estructuran el capitulo de la revision |
-| Similarity score between papers (abstract) | Papers similares para evitar redundancias |
-| NER models in Acknowledgements | Panorama de financiacion (`acknowledges` + `hasFunder`) |
-| KG must be represented in RDF | Endpoint SPARQL + serializacion Turtle (`kg.ttl`) |
-| Use HuggingFace as ML platform | BERTopic, sentence-transformers, modelo NER + Hub API para Model/Dataset |
-| Sample run (PROV) | Traza del pipeline asociada al corpus concreto |
-| Research Object (RO-Crate) | Paquete reproducible del corpus + KG + codigo para que otro investigador junior pueda aplicarlo a sus 30 papers |
