@@ -6,17 +6,17 @@
             "@id": "https://github.com/mamsss121",
             "@type": "Person",
             "givenName": "Mamoun",
-            "familyName": "Tahri Jautei Hassani",
+            "familyName": "Tahri Jautei Hassani"
         },
         {
             "@type": "Person",
             "givenName": "Julián Alberto",
-            "familyName": "Villafuerte Zevallos",
+            "familyName": "Villafuerte Zevallos"
         },
         {
             "@type": "Person",
             "givenName": "Alberto",
-            "familyName": "Barranquero Fernández",
+            "familyName": "Barranquero Fernández"
         }
     ],
     "codeRepository": "https://github.com/mamsss121/osai-2026-kg-genai",
