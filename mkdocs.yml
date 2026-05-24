@@ -5,7 +5,6 @@ nav:
   - Usage: caso_de_uso.md
   - Ontology: ontologia.md
   - Fonts: fuentes.md
-  - Q&A: preguntas.md
   - AI Declaration: AI_DECLARATION.md
 theme:
   name: material
