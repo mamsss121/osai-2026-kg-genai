@@ -84,6 +84,7 @@ Puedes lanzar queries directamente contra Fuseki en `http://localhost:3030/kg/sp
 
 ​```sparql
 PREFIX ns: <https://w3id.org/oeg/grupo2/ontology#>
+
 SELECT ?org (COUNT(?paper) AS ?n) WHERE {
   ?paper a ns:Paper ;
          ns:hasAuthor ?author .
@@ -98,6 +99,7 @@ LIMIT 5
 
 ​```sparql
 PREFIX ns: <https://w3id.org/oeg/grupo2/ontology#>
+
 SELECT ?paperA ?paperB ?score WHERE {
   ?paperA ns:similar_to ?pair .
   ?pair ns:hasPair ?paperB ;
