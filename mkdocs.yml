@@ -4,7 +4,7 @@ nav:
   - Install: install.md
   - Usage: caso_de_uso.md
   - Ontology: ontology.md
-  - Fonts: fonts.md
+  - Fonts: fuentes.md
   - Q&A: preguntas.md
   - AI Declaration: AI_declaration.md
 theme:
