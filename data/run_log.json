@@ -1,0 +1,372 @@
+{
+  "activities": {
+    "build_corpus": {
+      "started_at": "2026-05-24T11:44:03Z",
+      "params": {
+        "source": "arXiv API",
+        "endpoint": "http://export.arxiv.org/api/query"
+      },
+      "inputs": [
+        {
+          "path": "data/papers",
+          "exists": true,
+          "type": "directory",
+          "file_count": 30,
+          "sha256_listing": "c9ea8251a7d5d9ef589924018715fdea837b249b40bf6b7eca1092ff11c4e7ea"
+        }
+      ],
+      "git_commit": "586dc034efbd4c240f32e29ec610de6ad7d239f3",
+      "host": "DESKTOP-SRNQH6D",
+      "user": "abarr",
+      "platform": "Windows-10-10.0.26200-SP0",
+      "ended_at": "2026-05-24T11:44:10Z",
+      "outputs": [
+        {
+          "path": "data/corpus.csv",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 52259,
+          "sha256": "7c9712d5ed5669b32c3f4879f352a1451720b174a6f144c63e85f8751d55a371"
+        }
+      ]
+    },
+    "extract_text": {
+      "started_at": "2026-05-24T11:44:15Z",
+      "params": {
+        "tool": "Grobid",
+        "endpoint": "http://localhost:8070",
+        "options": "consolidateHeader=1, includeRawAffiliations=1"
+      },
+      "inputs": [
+        {
+          "path": "data/papers",
+          "exists": true,
+          "type": "directory",
+          "file_count": 30,
+          "sha256_listing": "c9ea8251a7d5d9ef589924018715fdea837b249b40bf6b7eca1092ff11c4e7ea"
+        }
+      ],
+      "git_commit": "586dc034efbd4c240f32e29ec610de6ad7d239f3",
+      "host": "DESKTOP-SRNQH6D",
+      "user": "abarr",
+      "platform": "Windows-10-10.0.26200-SP0",
+      "ended_at": "2026-05-24T11:45:22Z",
+      "outputs": [
+        {
+          "path": "data/extracted",
+          "exists": true,
+          "type": "directory",
+          "file_count": 30,
+          "sha256_listing": "659099476c6f451d658e52df30d4401217404d890a6d3f0e2bd7c2d1f3bc17fb"
+        }
+      ]
+    },
+    "topic_modeling": {
+      "started_at": "2026-05-24T11:45:44Z",
+      "params": {
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "min_topic_size": 2,
+        "vectorizer_ngram_range": "1-2",
+        "vectorizer_min_df": 2,
+        "domain_stopwords_count": 45,
+        "num_abstracts": 30
+      },
+      "inputs": [
+        {
+          "path": "data/extracted",
+          "exists": true,
+          "type": "directory",
+          "file_count": 30,
+          "sha256_listing": "659099476c6f451d658e52df30d4401217404d890a6d3f0e2bd7c2d1f3bc17fb"
+        }
+      ],
+      "git_commit": "586dc034efbd4c240f32e29ec610de6ad7d239f3",
+      "host": "DESKTOP-SRNQH6D",
+      "user": "abarr",
+      "platform": "Windows-10-10.0.26200-SP0",
+      "ended_at": "2026-05-24T11:45:56Z",
+      "outputs": [
+        {
+          "path": "data/topics.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 2047,
+          "sha256": "fcb2ec02d4de4a805c3d6bfbaa555c51a961b1ed8c6f6a55dd0efab1830357f1"
+        },
+        {
+          "path": "data/paper_topics.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 2643,
+          "sha256": "404152d6734709ea586ce7c59016a4c8630154b240f5208d441f15a77b2bcf42"
+        },
+        {
+          "path": "data/embeddings.npy",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 46208,
+          "sha256": "f2b8da9c59124801a94a1dfebc8e8310340b05c1a8ca40e6c8281acb18d0155e"
+        },
+        {
+          "path": "data/embedding_ids.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 513,
+          "sha256": "1fee4add2461e3725c30205f2c7725e7db34b63902a3e3d3a24bb5b7a0395a12"
+        }
+      ]
+    },
+    "similarity": {
+      "started_at": "2026-05-24T11:46:12Z",
+      "params": {
+        "metric": "cosine",
+        "threshold": 0.6,
+        "embedding_dim": 384,
+        "num_papers": 30
+      },
+      "inputs": [
+        {
+          "path": "data/embeddings.npy",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 46208,
+          "sha256": "f2b8da9c59124801a94a1dfebc8e8310340b05c1a8ca40e6c8281acb18d0155e"
+        },
+        {
+          "path": "data/embedding_ids.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 513,
+          "sha256": "1fee4add2461e3725c30205f2c7725e7db34b63902a3e3d3a24bb5b7a0395a12"
+        }
+      ],
+      "git_commit": "586dc034efbd4c240f32e29ec610de6ad7d239f3",
+      "host": "DESKTOP-SRNQH6D",
+      "user": "abarr",
+      "platform": "Windows-10-10.0.26200-SP0",
+      "ended_at": "2026-05-24T11:46:13Z",
+      "outputs": [
+        {
+          "path": "data/similarity.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 2199,
+          "sha256": "5d2c751fd1c1c7d726a220231ba8c5f67d02331b79625f29158ad966984f9846"
+        }
+      ]
+    },
+    "ner": {
+      "started_at": "2026-05-24T11:46:18Z",
+      "params": {
+        "models": [
+          "Jean-Baptiste/roberta-large-ner-english",
+          "dslim/bert-base-NER"
+        ],
+        "aggregation_strategy": "simple",
+        "num_papers_with_acks": 16,
+        "gold_standard_size": 8
+      },
+      "inputs": [
+        {
+          "path": "data/extracted",
+          "exists": true,
+          "type": "directory",
+          "file_count": 30,
+          "sha256_listing": "659099476c6f451d658e52df30d4401217404d890a6d3f0e2bd7c2d1f3bc17fb"
+        },
+        {
+          "path": "data/gold_standard_ner.jsonl",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 8354,
+          "sha256": "904c67454a443e40f898d18dd0513456db36ed14bb60775f3b69d7169e1b89f7"
+        }
+      ],
+      "git_commit": "586dc034efbd4c240f32e29ec610de6ad7d239f3",
+      "host": "DESKTOP-SRNQH6D",
+      "user": "abarr",
+      "platform": "Windows-10-10.0.26200-SP0",
+      "ended_at": "2026-05-24T11:46:28Z",
+      "outputs": [
+        {
+          "path": "data/ner_results.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 52528,
+          "sha256": "d20e69862e2241d100299a99f7d0a75b2cdcea0618645129679c3b58e22f81c8"
+        },
+        {
+          "path": "data/ner_metrics.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 1340,
+          "sha256": "ca256541db6961d04a274c055a905127f0adf86c02954de52414137f2a01eadb"
+        }
+      ]
+    },
+    "enrich": {
+      "started_at": "2026-05-24T11:46:32Z",
+      "params": {
+        "sources": [
+          "OpenAIRE Graph",
+          "HuggingFace Hub",
+          "Wikidata SPARQL"
+        ],
+        "endpoints": {
+          "openaire": "https://api.openaire.eu/graph/v1/researchProducts",
+          "huggingface": "https://huggingface.co/api",
+          "wikidata": "https://query.wikidata.org/sparql"
+        },
+        "num_papers": 30,
+        "openaire_authenticated": true
+      },
+      "inputs": [
+        {
+          "path": "data/corpus.csv",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 52259,
+          "sha256": "7c9712d5ed5669b32c3f4879f352a1451720b174a6f144c63e85f8751d55a371"
+        },
+        {
+          "path": "data/extracted",
+          "exists": true,
+          "type": "directory",
+          "file_count": 30,
+          "sha256_listing": "659099476c6f451d658e52df30d4401217404d890a6d3f0e2bd7c2d1f3bc17fb"
+        },
+        {
+          "path": "data/ner_results.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 52528,
+          "sha256": "d20e69862e2241d100299a99f7d0a75b2cdcea0618645129679c3b58e22f81c8"
+        }
+      ],
+      "git_commit": "586dc034efbd4c240f32e29ec610de6ad7d239f3",
+      "host": "DESKTOP-SRNQH6D",
+      "user": "abarr",
+      "platform": "Windows-10-10.0.26200-SP0",
+      "ended_at": "2026-05-24T11:48:04Z",
+      "outputs": [
+        {
+          "path": "data/enrichment.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 8443,
+          "sha256": "ecc40c8fad06f95654448f72c95ec192615542532d80d7deef53a6ddd86c8ddf"
+        },
+        {
+          "path": "data/orgs_wikidata.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 2465,
+          "sha256": "f200d374fa57e52974a02cae6b14a606c5c0d54a117f7e3dbc436818b4da585e"
+        }
+      ]
+    },
+    "build_rdf": {
+      "started_at": "2026-05-24T11:48:22Z",
+      "params": {
+        "namespace": "https://w3id.org/oeg/grupo2/ontology#",
+        "library": "rdflib",
+        "format": "turtle"
+      },
+      "inputs": [
+        {
+          "path": "data/corpus.csv",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 52259,
+          "sha256": "7c9712d5ed5669b32c3f4879f352a1451720b174a6f144c63e85f8751d55a371"
+        },
+        {
+          "path": "data/paper_topics.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 2643,
+          "sha256": "404152d6734709ea586ce7c59016a4c8630154b240f5208d441f15a77b2bcf42"
+        },
+        {
+          "path": "data/topics.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 2047,
+          "sha256": "fcb2ec02d4de4a805c3d6bfbaa555c51a961b1ed8c6f6a55dd0efab1830357f1"
+        },
+        {
+          "path": "data/similarity.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 2199,
+          "sha256": "5d2c751fd1c1c7d726a220231ba8c5f67d02331b79625f29158ad966984f9846"
+        },
+        {
+          "path": "data/ner_results.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 52528,
+          "sha256": "d20e69862e2241d100299a99f7d0a75b2cdcea0618645129679c3b58e22f81c8"
+        },
+        {
+          "path": "data/enrichment.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 8443,
+          "sha256": "ecc40c8fad06f95654448f72c95ec192615542532d80d7deef53a6ddd86c8ddf"
+        },
+        {
+          "path": "data/orgs_wikidata.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 2465,
+          "sha256": "f200d374fa57e52974a02cae6b14a606c5c0d54a117f7e3dbc436818b4da585e"
+        }
+      ],
+      "git_commit": "586dc034efbd4c240f32e29ec610de6ad7d239f3",
+      "host": "DESKTOP-SRNQH6D",
+      "user": "abarr",
+      "platform": "Windows-10-10.0.26200-SP0",
+      "ended_at": "2026-05-24T11:48:22Z",
+      "outputs": [
+        {
+          "path": "data/kg.ttl",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 108308,
+          "sha256": "2c09e88038a9b5d7c99d6f03196d925dfd08a914b8889d73b61e5785368aec8f"
+        }
+      ]
+    },
+    "make_prov": {
+      "started_at": "2026-05-24T11:48:28Z",
+      "params": {
+        "vocabulary": "PROV-O",
+        "format": "turtle"
+      },
+      "inputs": [
+        {
+          "path": "data/run_log.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 10947,
+          "sha256": "e25c084619e41ad628a1e239f25bc422a31dbc41750beff5cf672c44a75073e5"
+        }
+      ],
+      "git_commit": "586dc034efbd4c240f32e29ec610de6ad7d239f3",
+      "host": "DESKTOP-SRNQH6D",
+      "user": "abarr",
+      "platform": "Windows-10-10.0.26200-SP0",
+      "ended_at": "2026-05-24T11:48:28Z",
+      "outputs": [
+        {
+          "path": "data/prov.ttl",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 15942,
+          "sha256": "876c4858d68f67c351a93a2cb448752961e1d44b897b0d10fc1291101a6629a6"
+        }
+      ]
+    }
+  }
+}

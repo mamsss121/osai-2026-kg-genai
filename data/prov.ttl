@@ -1,0 +1,309 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix kg: <https://w3id.org/oeg/grupo2/ontology#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/oeg/grupo2/prov/activity/make_prov> a prov:Activity ;
+    rdfs:label "08_prov.py — PROV-O generation." ;
+    prov:startedAtTime "2026-05-24T11:48:28+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/oeg/grupo2/prov/entity/data_run_log_json> ;
+    prov:wasAssociatedWith <https://w3id.org/oeg/grupo2/prov/agent/grupo2>,
+        <https://w3id.org/oeg/grupo2/prov/agent/make_prov> ;
+    kg:executionHost "DESKTOP-SRNQH6D" ;
+    kg:executionUser "abarr" ;
+    kg:parameter "format=turtle",
+        "vocabulary=PROV-O" ;
+    kg:platform "Windows-10-10.0.26200-SP0" .
+
+<https://w3id.org/oeg/grupo2/prov/agent/alberto> a prov:Agent,
+        foaf:Person ;
+    prov:actedOnBehalfOf <https://w3id.org/oeg/grupo2/prov/agent/grupo2> ;
+    foaf:name "Alberto Barranquero Fernández" .
+
+<https://w3id.org/oeg/grupo2/prov/agent/julian> a prov:Agent,
+        foaf:Person ;
+    prov:actedOnBehalfOf <https://w3id.org/oeg/grupo2/prov/agent/grupo2> ;
+    foaf:name "Julián Alberto Villafuerte Zevallos" .
+
+<https://w3id.org/oeg/grupo2/prov/agent/mamoun> a prov:Agent,
+        foaf:Person ;
+    prov:actedOnBehalfOf <https://w3id.org/oeg/grupo2/prov/agent/grupo2> ;
+    foaf:name "Mamoun Tahri Jautei Hassani" .
+
+<https://w3id.org/oeg/grupo2/prov/agent/repo> a prov:SoftwareAgent ;
+    rdfs:label "kg-genai-grupo2 source repository" ;
+    kg:gitCommit "586dc034efbd4c240f32e29ec610de6ad7d239f3" .
+
+<https://w3id.org/oeg/grupo2/prov/entity/data_kg_ttl> a prov:Entity ;
+    rdfs:label "data/kg.ttl" ;
+    prov:wasAttributedTo <https://w3id.org/oeg/grupo2/prov/agent/grupo2> ;
+    prov:wasGeneratedBy <https://w3id.org/oeg/grupo2/prov/activity/build_rdf> ;
+    kg:path "data/kg.ttl" ;
+    kg:sha256 "2c09e88038a9b5d7c99d6f03196d925dfd08a914b8889d73b61e5785368aec8f" ;
+    kg:sizeBytes 108308 .
+
+<https://w3id.org/oeg/grupo2/prov/entity/data_ner_metrics_json> a prov:Entity ;
+    rdfs:label "data/ner_metrics.json" ;
+    prov:wasAttributedTo <https://w3id.org/oeg/grupo2/prov/agent/grupo2> ;
+    prov:wasGeneratedBy <https://w3id.org/oeg/grupo2/prov/activity/ner> ;
+    kg:path "data/ner_metrics.json" ;
+    kg:sha256 "ca256541db6961d04a274c055a905127f0adf86c02954de52414137f2a01eadb" ;
+    kg:sizeBytes 1340 .
+
+<https://w3id.org/oeg/grupo2/prov/activity/build_rdf> a prov:Activity ;
+    rdfs:label "07_build_rdf.py — Construye el KG en RDF Turtle con rdflib." ;
+    prov:endedAtTime "2026-05-24T11:48:22+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-05-24T11:48:22+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/oeg/grupo2/prov/entity/data_corpus_csv>,
+        <https://w3id.org/oeg/grupo2/prov/entity/data_enrichment_json>,
+        <https://w3id.org/oeg/grupo2/prov/entity/data_ner_results_json>,
+        <https://w3id.org/oeg/grupo2/prov/entity/data_orgs_wikidata_json>,
+        <https://w3id.org/oeg/grupo2/prov/entity/data_paper_topics_json>,
+        <https://w3id.org/oeg/grupo2/prov/entity/data_similarity_json>,
+        <https://w3id.org/oeg/grupo2/prov/entity/data_topics_json> ;
+    prov:wasAssociatedWith <https://w3id.org/oeg/grupo2/prov/agent/build_rdf>,
+        <https://w3id.org/oeg/grupo2/prov/agent/grupo2> ;
+    prov:wasInformedBy <https://w3id.org/oeg/grupo2/prov/activity/enrich> ;
+    kg:executionHost "DESKTOP-SRNQH6D" ;
+    kg:executionUser "abarr" ;
+    kg:parameter "format=turtle",
+        "library=rdflib",
+        "namespace=https://w3id.org/oeg/grupo2/ontology#" ;
+    kg:platform "Windows-10-10.0.26200-SP0" .
+
+<https://w3id.org/oeg/grupo2/prov/activity/similarity> a prov:Activity ;
+    rdfs:label "04_similarity.py — Cosine similarity sobre embeddings de abstracts." ;
+    prov:endedAtTime "2026-05-24T11:46:13+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-05-24T11:46:12+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/oeg/grupo2/prov/entity/data_embedding_ids_json>,
+        <https://w3id.org/oeg/grupo2/prov/entity/data_embeddings_npy> ;
+    prov:wasAssociatedWith <https://w3id.org/oeg/grupo2/prov/agent/grupo2>,
+        <https://w3id.org/oeg/grupo2/prov/agent/similarity> ;
+    prov:wasInformedBy <https://w3id.org/oeg/grupo2/prov/activity/topic_modeling> ;
+    kg:executionHost "DESKTOP-SRNQH6D" ;
+    kg:executionUser "abarr" ;
+    kg:parameter "embedding_dim=384",
+        "metric=cosine",
+        "num_papers=30",
+        "threshold=0.6" ;
+    kg:platform "Windows-10-10.0.26200-SP0" .
+
+<https://w3id.org/oeg/grupo2/prov/agent/build_corpus> a prov:SoftwareAgent ;
+    rdfs:label "01_build_corpus.py" ;
+    kg:gitCommit "586dc034efbd4c240f32e29ec610de6ad7d239f3" ;
+    kg:scriptPath "src/01_build_corpus.py" .
+
+<https://w3id.org/oeg/grupo2/prov/agent/build_rdf> a prov:SoftwareAgent ;
+    rdfs:label "07_build_rdf.py" ;
+    kg:gitCommit "586dc034efbd4c240f32e29ec610de6ad7d239f3" ;
+    kg:scriptPath "src/07_build_rdf.py" .
+
+<https://w3id.org/oeg/grupo2/prov/agent/enrich> a prov:SoftwareAgent ;
+    rdfs:label "06_enrich.py" ;
+    kg:gitCommit "586dc034efbd4c240f32e29ec610de6ad7d239f3" ;
+    kg:scriptPath "src/06_enrich.py" .
+
+<https://w3id.org/oeg/grupo2/prov/agent/extract_text> a prov:SoftwareAgent ;
+    rdfs:label "02_extract_text.py" ;
+    kg:gitCommit "586dc034efbd4c240f32e29ec610de6ad7d239f3" ;
+    kg:scriptPath "src/02_extract_text.py" .
+
+<https://w3id.org/oeg/grupo2/prov/agent/ner> a prov:SoftwareAgent ;
+    rdfs:label "05_ner_acks.py" ;
+    kg:gitCommit "586dc034efbd4c240f32e29ec610de6ad7d239f3" ;
+    kg:scriptPath "src/05_ner_acks.py" .
+
+<https://w3id.org/oeg/grupo2/prov/agent/similarity> a prov:SoftwareAgent ;
+    rdfs:label "04_similarity.py" ;
+    kg:gitCommit "586dc034efbd4c240f32e29ec610de6ad7d239f3" ;
+    kg:scriptPath "src/04_similarity.py" .
+
+<https://w3id.org/oeg/grupo2/prov/agent/topic_modeling> a prov:SoftwareAgent ;
+    rdfs:label "03_topic_modeling.py" ;
+    kg:gitCommit "586dc034efbd4c240f32e29ec610de6ad7d239f3" ;
+    kg:scriptPath "src/03_topic_modeling.py" .
+
+<https://w3id.org/oeg/grupo2/prov/entity/data_embedding_ids_json> a prov:Entity ;
+    rdfs:label "data/embedding_ids.json" ;
+    prov:wasAttributedTo <https://w3id.org/oeg/grupo2/prov/agent/grupo2> ;
+    prov:wasGeneratedBy <https://w3id.org/oeg/grupo2/prov/activity/topic_modeling> ;
+    kg:path "data/embedding_ids.json" ;
+    kg:sha256 "1fee4add2461e3725c30205f2c7725e7db34b63902a3e3d3a24bb5b7a0395a12" ;
+    kg:sizeBytes 513 .
+
+<https://w3id.org/oeg/grupo2/prov/entity/data_embeddings_npy> a prov:Entity ;
+    rdfs:label "data/embeddings.npy" ;
+    prov:wasAttributedTo <https://w3id.org/oeg/grupo2/prov/agent/grupo2> ;
+    prov:wasGeneratedBy <https://w3id.org/oeg/grupo2/prov/activity/topic_modeling> ;
+    kg:path "data/embeddings.npy" ;
+    kg:sha256 "f2b8da9c59124801a94a1dfebc8e8310340b05c1a8ca40e6c8281acb18d0155e" ;
+    kg:sizeBytes 46208 .
+
+<https://w3id.org/oeg/grupo2/prov/entity/data_enrichment_json> a prov:Entity ;
+    rdfs:label "data/enrichment.json" ;
+    prov:wasAttributedTo <https://w3id.org/oeg/grupo2/prov/agent/grupo2> ;
+    prov:wasGeneratedBy <https://w3id.org/oeg/grupo2/prov/activity/enrich> ;
+    kg:path "data/enrichment.json" ;
+    kg:sha256 "ecc40c8fad06f95654448f72c95ec192615542532d80d7deef53a6ddd86c8ddf" ;
+    kg:sizeBytes 8443 .
+
+<https://w3id.org/oeg/grupo2/prov/entity/data_gold_standard_ner_jsonl> a prov:Entity ;
+    rdfs:label "data/gold_standard_ner.jsonl" ;
+    kg:path "data/gold_standard_ner.jsonl" ;
+    kg:sha256 "904c67454a443e40f898d18dd0513456db36ed14bb60775f3b69d7169e1b89f7" ;
+    kg:sizeBytes 8354 .
+
+<https://w3id.org/oeg/grupo2/prov/entity/data_orgs_wikidata_json> a prov:Entity ;
+    rdfs:label "data/orgs_wikidata.json" ;
+    prov:wasAttributedTo <https://w3id.org/oeg/grupo2/prov/agent/grupo2> ;
+    prov:wasGeneratedBy <https://w3id.org/oeg/grupo2/prov/activity/enrich> ;
+    kg:path "data/orgs_wikidata.json" ;
+    kg:sha256 "f200d374fa57e52974a02cae6b14a606c5c0d54a117f7e3dbc436818b4da585e" ;
+    kg:sizeBytes 2465 .
+
+<https://w3id.org/oeg/grupo2/prov/entity/data_paper_topics_json> a prov:Entity ;
+    rdfs:label "data/paper_topics.json" ;
+    prov:wasAttributedTo <https://w3id.org/oeg/grupo2/prov/agent/grupo2> ;
+    prov:wasGeneratedBy <https://w3id.org/oeg/grupo2/prov/activity/topic_modeling> ;
+    kg:path "data/paper_topics.json" ;
+    kg:sha256 "404152d6734709ea586ce7c59016a4c8630154b240f5208d441f15a77b2bcf42" ;
+    kg:sizeBytes 2643 .
+
+<https://w3id.org/oeg/grupo2/prov/entity/data_run_log_json> a prov:Entity ;
+    rdfs:label "data/run_log.json" ;
+    kg:path "data/run_log.json" ;
+    kg:sha256 "e25c084619e41ad628a1e239f25bc422a31dbc41750beff5cf672c44a75073e5" ;
+    kg:sizeBytes 10947 .
+
+<https://w3id.org/oeg/grupo2/prov/entity/data_similarity_json> a prov:Entity ;
+    rdfs:label "data/similarity.json" ;
+    prov:wasAttributedTo <https://w3id.org/oeg/grupo2/prov/agent/grupo2> ;
+    prov:wasGeneratedBy <https://w3id.org/oeg/grupo2/prov/activity/similarity> ;
+    kg:path "data/similarity.json" ;
+    kg:sha256 "5d2c751fd1c1c7d726a220231ba8c5f67d02331b79625f29158ad966984f9846" ;
+    kg:sizeBytes 2199 .
+
+<https://w3id.org/oeg/grupo2/prov/entity/data_topics_json> a prov:Entity ;
+    rdfs:label "data/topics.json" ;
+    prov:wasAttributedTo <https://w3id.org/oeg/grupo2/prov/agent/grupo2> ;
+    prov:wasGeneratedBy <https://w3id.org/oeg/grupo2/prov/activity/topic_modeling> ;
+    kg:path "data/topics.json" ;
+    kg:sha256 "fcb2ec02d4de4a805c3d6bfbaa555c51a961b1ed8c6f6a55dd0efab1830357f1" ;
+    kg:sizeBytes 2047 .
+
+<https://w3id.org/oeg/grupo2/prov/activity/build_corpus> a prov:Activity ;
+    rdfs:label "01_build_corpus.py — Construye corpus.csv consultando arXiv API." ;
+    prov:endedAtTime "2026-05-24T11:44:10+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-05-24T11:44:03+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/oeg/grupo2/prov/entity/data_papers> ;
+    prov:wasAssociatedWith <https://w3id.org/oeg/grupo2/prov/agent/build_corpus>,
+        <https://w3id.org/oeg/grupo2/prov/agent/grupo2> ;
+    kg:executionHost "DESKTOP-SRNQH6D" ;
+    kg:executionUser "abarr" ;
+    kg:parameter "endpoint=http://export.arxiv.org/api/query",
+        "source=arXiv API" ;
+    kg:platform "Windows-10-10.0.26200-SP0" .
+
+<https://w3id.org/oeg/grupo2/prov/entity/data_corpus_csv> a prov:Entity ;
+    rdfs:label "data/corpus.csv" ;
+    prov:wasAttributedTo <https://w3id.org/oeg/grupo2/prov/agent/grupo2> ;
+    prov:wasGeneratedBy <https://w3id.org/oeg/grupo2/prov/activity/build_corpus> ;
+    kg:path "data/corpus.csv" ;
+    kg:sha256 "7c9712d5ed5669b32c3f4879f352a1451720b174a6f144c63e85f8751d55a371" ;
+    kg:sizeBytes 52259 .
+
+<https://w3id.org/oeg/grupo2/prov/entity/data_ner_results_json> a prov:Entity ;
+    rdfs:label "data/ner_results.json" ;
+    prov:wasAttributedTo <https://w3id.org/oeg/grupo2/prov/agent/grupo2> ;
+    prov:wasGeneratedBy <https://w3id.org/oeg/grupo2/prov/activity/ner> ;
+    kg:path "data/ner_results.json" ;
+    kg:sha256 "d20e69862e2241d100299a99f7d0a75b2cdcea0618645129679c3b58e22f81c8" ;
+    kg:sizeBytes 52528 .
+
+<https://w3id.org/oeg/grupo2/prov/entity/data_papers> a prov:Entity ;
+    rdfs:label "data/papers" ;
+    kg:fileCount 30 ;
+    kg:path "data/papers" ;
+    kg:sha256Listing "c9ea8251a7d5d9ef589924018715fdea837b249b40bf6b7eca1092ff11c4e7ea" .
+
+<https://w3id.org/oeg/grupo2/prov/activity/enrich> a prov:Activity ;
+    rdfs:label "06_enrich.py — Enriquecimiento via OpenAIRE Graph, HuggingFace Hub y Wikidata SPARQL." ;
+    prov:endedAtTime "2026-05-24T11:48:04+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-05-24T11:46:32+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/oeg/grupo2/prov/entity/data_corpus_csv>,
+        <https://w3id.org/oeg/grupo2/prov/entity/data_extracted>,
+        <https://w3id.org/oeg/grupo2/prov/entity/data_ner_results_json> ;
+    prov:wasAssociatedWith <https://w3id.org/oeg/grupo2/prov/agent/enrich>,
+        <https://w3id.org/oeg/grupo2/prov/agent/grupo2> ;
+    prov:wasInformedBy <https://w3id.org/oeg/grupo2/prov/activity/ner> ;
+    kg:executionHost "DESKTOP-SRNQH6D" ;
+    kg:executionUser "abarr" ;
+    kg:parameter "endpoints={\"openaire\": \"https://api.openaire.eu/graph/v1/researchProducts\", \"huggingface\": \"https://huggingface.co/api\", \"wikidata\": \"https://query.wikidata.org/sparql\"}",
+        "num_papers=30",
+        "openaire_authenticated=true",
+        "sources=[\"OpenAIRE Graph\", \"HuggingFace Hub\", \"Wikidata SPARQL\"]" ;
+    kg:platform "Windows-10-10.0.26200-SP0" .
+
+<https://w3id.org/oeg/grupo2/prov/activity/extract_text> a prov:Activity ;
+    rdfs:label "02_extract_text.py — Extrae texto estructurado de PDFs via Grobid." ;
+    prov:endedAtTime "2026-05-24T11:45:22+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-05-24T11:44:15+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/oeg/grupo2/prov/entity/data_papers> ;
+    prov:wasAssociatedWith <https://w3id.org/oeg/grupo2/prov/agent/extract_text>,
+        <https://w3id.org/oeg/grupo2/prov/agent/grupo2> ;
+    prov:wasInformedBy <https://w3id.org/oeg/grupo2/prov/activity/build_corpus> ;
+    kg:executionHost "DESKTOP-SRNQH6D" ;
+    kg:executionUser "abarr" ;
+    kg:parameter "endpoint=http://localhost:8070",
+        "options=consolidateHeader=1, includeRawAffiliations=1",
+        "tool=Grobid" ;
+    kg:platform "Windows-10-10.0.26200-SP0" .
+
+<https://w3id.org/oeg/grupo2/prov/activity/ner> a prov:Activity ;
+    rdfs:label "05_ner_acks.py — NER en Acknowledgements con 2 modelos de HuggingFace." ;
+    prov:endedAtTime "2026-05-24T11:46:28+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-05-24T11:46:18+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/oeg/grupo2/prov/entity/data_extracted>,
+        <https://w3id.org/oeg/grupo2/prov/entity/data_gold_standard_ner_jsonl> ;
+    prov:wasAssociatedWith <https://w3id.org/oeg/grupo2/prov/agent/grupo2>,
+        <https://w3id.org/oeg/grupo2/prov/agent/ner> ;
+    prov:wasInformedBy <https://w3id.org/oeg/grupo2/prov/activity/extract_text> ;
+    kg:executionHost "DESKTOP-SRNQH6D" ;
+    kg:executionUser "abarr" ;
+    kg:parameter "aggregation_strategy=simple",
+        "gold_standard_size=8",
+        "models=[\"Jean-Baptiste/roberta-large-ner-english\", \"dslim/bert-base-NER\"]",
+        "num_papers_with_acks=16" ;
+    kg:platform "Windows-10-10.0.26200-SP0" .
+
+<https://w3id.org/oeg/grupo2/prov/entity/data_extracted> a prov:Entity ;
+    rdfs:label "data/extracted" ;
+    prov:wasAttributedTo <https://w3id.org/oeg/grupo2/prov/agent/grupo2> ;
+    prov:wasGeneratedBy <https://w3id.org/oeg/grupo2/prov/activity/extract_text> ;
+    kg:fileCount 30 ;
+    kg:path "data/extracted" ;
+    kg:sha256Listing "659099476c6f451d658e52df30d4401217404d890a6d3f0e2bd7c2d1f3bc17fb" .
+
+<https://w3id.org/oeg/grupo2/prov/activity/topic_modeling> a prov:Activity ;
+    rdfs:label "03_topic_modeling.py — Topic modeling con BERTopic + sentence-transformers." ;
+    prov:endedAtTime "2026-05-24T11:45:56+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-05-24T11:45:44+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/oeg/grupo2/prov/entity/data_extracted> ;
+    prov:wasAssociatedWith <https://w3id.org/oeg/grupo2/prov/agent/grupo2>,
+        <https://w3id.org/oeg/grupo2/prov/agent/topic_modeling> ;
+    prov:wasInformedBy <https://w3id.org/oeg/grupo2/prov/activity/extract_text> ;
+    kg:executionHost "DESKTOP-SRNQH6D" ;
+    kg:executionUser "abarr" ;
+    kg:parameter "domain_stopwords_count=45",
+        "embedding_model=sentence-transformers/all-MiniLM-L6-v2",
+        "min_topic_size=2",
+        "num_abstracts=30",
+        "vectorizer_min_df=2",
+        "vectorizer_ngram_range=1-2" ;
+    kg:platform "Windows-10-10.0.26200-SP0" .
+
+<https://w3id.org/oeg/grupo2/prov/agent/grupo2> a prov:Agent,
+        foaf:Organization ;
+    foaf:name "Grupo 2 — OS&AI in RSE, UPM" .
+

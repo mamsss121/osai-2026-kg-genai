@@ -22,6 +22,9 @@ from pathlib import Path
 
 import numpy as np
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _prov_logger import start_activity, end_activity  # noqa: E402
+
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 EMB_PATH = PROJECT_ROOT / "data" / "embeddings.npy"
 IDS_PATH = PROJECT_ROOT / "data" / "embedding_ids.json"
@@ -60,6 +63,17 @@ def main() -> int:
         paper_ids: list[str] = json.load(fh)
     print(f"Cargados {len(paper_ids)} embeddings de dimension {embeddings.shape[1]}.")
 
+    start_activity(
+        "similarity",
+        params={
+            "metric": "cosine",
+            "threshold": args.threshold,
+            "embedding_dim": int(embeddings.shape[1]),
+            "num_papers": len(paper_ids),
+        },
+        inputs=[EMB_PATH, IDS_PATH],
+    )
+
     sim = cosine_matrix(embeddings)
 
     pairs: list[dict] = []
@@ -97,6 +111,7 @@ def main() -> int:
         print(f"  Top 5 pares mas similares:")
         for p in pairs[:5]:
             print(f"    {p['paperA']} <-> {p['paperB']} : {p['score']}")
+    end_activity("similarity", outputs=[SIM_OUT])
     return 0
 
 

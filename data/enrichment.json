@@ -1,0 +1,303 @@
+{
+  "2505.16311": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2507.14681": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2507.17066": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2508.06470": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2508.17554": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2509.00073": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2509.26146": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2510.07623": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2510.11754": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2510.12255": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2510.15782": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2510.18169": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [
+      {
+        "modelId": "nvidia/parakeet-tdt-0.6b-v2",
+        "pipeline_tag": "automatic-speech-recognition",
+        "library_name": "nemo",
+        "license": "cc-by-4.0",
+        "downloads": 237978,
+        "likes": 1475,
+        "tags": [
+          "nemo",
+          "automatic-speech-recognition",
+          "speech",
+          "audio",
+          "Transducer",
+          "TDT",
+          "FastConformer",
+          "Conformer",
+          "pytorch",
+          "NeMo"
+        ]
+      },
+      {
+        "modelId": "nvidia/speakerverification_en_titanet_large",
+        "pipeline_tag": null,
+        "library_name": "nemo",
+        "license": "cc-by-4.0",
+        "downloads": 393161,
+        "likes": 120,
+        "tags": [
+          "nemo",
+          "speaker",
+          "speech",
+          "audio",
+          "speaker-verification",
+          "speaker-recognition",
+          "speaker-diarization",
+          "titanet",
+          "NeMo",
+          "pytorch"
+        ]
+      },
+      {
+        "modelId": "nvidia/diar_sortformer_4spk-v1",
+        "pipeline_tag": "automatic-speech-recognition",
+        "library_name": "nemo",
+        "license": "cc-by-nc-4.0",
+        "downloads": 18689,
+        "likes": 139,
+        "tags": [
+          "nemo",
+          "safetensors",
+          "sortformer",
+          "speaker-diarization",
+          "speaker-recognition",
+          "speech",
+          "audio",
+          "Transformer",
+          "FastConformer",
+          "Conformer"
+        ]
+      }
+    ],
+    "hf_datasets": []
+  },
+  "2510.21027": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2510.24551": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2510.24594": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2511.15994": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2512.06018": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2512.14641": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2601.03880": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2602.08121": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2602.19401": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2603.05647": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2603.16204": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2603.16918": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2603.19093": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2604.13381": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2604.21352": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2604.22610": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2605.03512": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  },
+  "2605.16279": {
+    "openaire": {
+      "error": "HTTP 403",
+      "raw": "{ \"error\": \"Token expired\", \"description\" : \"Authentication token expired.\" }\n"
+    },
+    "hf_models": [],
+    "hf_datasets": []
+  }
+}

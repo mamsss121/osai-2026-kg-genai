@@ -1,0 +1,107 @@
+{
+  "European Commission": {
+    "wikidataId": "Q8880",
+    "country": "Belgium",
+    "type": "executive branch"
+  },
+  "HRL": {
+    "wikidataId": "Q561637",
+    "country": null,
+    "type": "Wikimedia disambiguation page"
+  },
+  "MJM": {
+    "wikidataId": "Q3841356",
+    "country": null,
+    "type": "Wikimedia disambiguation page"
+  },
+  "Google": {
+    "wikidataId": "Q95",
+    "country": "United States",
+    "type": "public company"
+  },
+  "Alphabet": {
+    "wikidataId": "Q2839530",
+    "country": null,
+    "type": "video game"
+  },
+  "MJB": {
+    "wikidataId": "Q3841350",
+    "country": null,
+    "type": "Wikimedia disambiguation page"
+  },
+  "National Institutes of Health": {
+    "wikidataId": "Q48792120",
+    "country": "Philippines",
+    "type": "research center"
+  },
+  "Microsoft Research": {
+    "wikidataId": "Q1144725",
+    "country": "United States",
+    "type": "division"
+  },
+  "Microsoft": {
+    "wikidataId": "Q2283",
+    "country": "United States",
+    "type": "public company"
+  },
+  "LivingWorks": {
+    "wikidataId": "Q17067638",
+    "country": null,
+    "type": null
+  },
+  "Koko": {
+    "wikidataId": "Q402827",
+    "country": null,
+    "type": "Wikimedia disambiguation page"
+  },
+  "Oxford University Press": {
+    "wikidataId": "Q217595",
+    "country": "United Kingdom",
+    "type": "organization"
+  },
+  "Little, Brown Book Group": {
+    "wikidataId": "Q6648810",
+    "country": "United Kingdom",
+    "type": "subsidiary company"
+  },
+  "Navi": {
+    "wikidataId": "Q236115",
+    "country": null,
+    "type": "Wikimedia disambiguation page"
+  },
+  "INCIBE": {
+    "wikidataId": "Q5907084",
+    "country": "Spain",
+    "type": "state-owned enterprise"
+  },
+  "SPRINT": {
+    "wikidataId": "Q211234",
+    "country": null,
+    "type": "web portal"
+  },
+  "Next": {
+    "wikidataId": "Q228728",
+    "country": null,
+    "type": "Wikimedia disambiguation page"
+  },
+  "Generalitat Valenciana": {
+    "wikidataId": "Q2477285",
+    "country": "Spain",
+    "type": "autonomous government"
+  },
+  "NIDA": {
+    "wikidataId": "Q15991839",
+    "country": "Netherlands",
+    "type": "local political party"
+  },
+  "OHC": {
+    "wikidataId": "Q564587",
+    "country": null,
+    "type": "Wikimedia disambiguation page"
+  },
+  "IBH": {
+    "wikidataId": "Q1653052",
+    "country": null,
+    "type": "Wikimedia disambiguation page"
+  }
+}
