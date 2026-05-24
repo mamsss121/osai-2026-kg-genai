@@ -113,4 +113,6 @@ Por determinar (probable: MIT o Apache-2.0).
 
 ## Citación
 
-Si reutilizáis este trabajo, consultad [`CITATION.cff`](CITATION.cff) (pendiente).
+Si reutilizas este software, cítalo usando los metadatos de [`CITATION.cff`](CITATION.cff) o el siguiente DOI:
+
+> Tahri Jautei Hassani, M., Villafuerte Zevallos, J. A., & Barranquero Fernández, A. (2026). *KG-GenAI: Knowledge Graph for State-of-the-Art Review of Generative AI Papers* (v1.0.0) [Software]. Zenodo. https://doi.org/10.5281/zenodo.20363978
