@@ -1,4 +1,4 @@
-# Knowledge Graph para Gen AI
+# Práctica 2 - IA y Ciencia Abierta en RSE
 
 **Acelerador del estado del arte en Inteligencia Artificial Generativa.**
 

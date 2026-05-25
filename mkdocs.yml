@@ -1,4 +1,4 @@
-site_name: Acelerador state of art
+site_name: Acelerador del Estado del Arte sobre GenAI a través de Knowledge Graphs
 nav:
   - Home: index.md
   - Instalación: install.md
