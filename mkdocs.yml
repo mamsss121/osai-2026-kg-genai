@@ -1,4 +1,4 @@
-site_name: Acelerador del Estado del Arte sobre GenAI a través de Knowledge Graphs
+site_name: AcelEdA-KG
 nav:
   - Home: index.md
   - Instalación: install.md

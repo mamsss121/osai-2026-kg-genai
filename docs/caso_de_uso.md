@@ -6,8 +6,6 @@ Un **estudiante o investigador** inicia un trabajo en sobre el uso de IA Generat
 
 Estudiante de grado de ingeniería informática se plantea realizar su TFG sobre el uso de IA generativa en consultas de medicina de familia. Para ello, debe hacer una investigación profunda sobre el estado del arte de las herramientas y modelos actuales utilizados en el área de la salud. Hacerlo a mano lleva **2-3 semanas** y es muy fácil que se le escapen conexiones. 
 
-> [NOTE]
-> Por experiencia propia de los autores, añadir que es una tarea ardua, aún teniendo conocimiento del tema.
 
 ## Solucion propuesta
 
