@@ -9,7 +9,7 @@
 
 ---
 
-## 1. OpenAIRE Graph (REST) 
+## OpenAIRE 
 
 **Endpoint base:** `https://api.openaire.eu/graph/v1/`
 **Documentacion:** https://graph.openaire.eu/docs/apis/
@@ -31,7 +31,7 @@ Authorization: Bearer <token>
 
 ---
 
-## 2. HuggingFace Hub (REST) - modelos y datasets
+## HuggingFace 
 
 **Endpoint base:** `https://huggingface.co/api/`
 **Documentacion:** https://huggingface.co/docs/hub/api
@@ -54,7 +54,7 @@ GET https://huggingface.co/api/models?search=diffusion&limit=20
 
 ---
 
-## 3. Wikidata (SPARQL)
+## Wikidata
 
 **Endpoint:** https://query.wikidata.org/sparql (alternativo para papers: https://query-scholarly.wikidata.org/sparql).
 **Autenticacion:** No requiere token.

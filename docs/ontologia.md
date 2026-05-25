@@ -19,60 +19,7 @@ Esta ontologia incluye los **elementos minimos vistos en clase**:
 
 ## Diagrama 
 ```mermaid
-classDiagram
-    class Paper {
-      +xsd:string title [OAIRE]
-      +xsd:string abstract [OAIRE]
-      +xsd:gYear year [OAIRE]
-      +xsd:string doi [OAIRE]
-    }
-    class Person {
-      +xsd:string name [OAIRE]
-    }
-    class Organization {
-      +xsd:string name [OAIRE]
-      +xsd:string wikidataId [WD]
-      +xsd:string type [WD]
-    }
-    class Project {
-      +xsd:string title [OAIRE]
-      +xsd:string grantNumber [OAIRE]
-      +xsd:string programme [OAIRE]
-    }
-    class Topic {
-      +xsd:string label [INT]
-      +xsd:string wikidataId [WD]
-    }
-    class Venue {
-      +xsd:string name [OAIRE]
-    }
-    class Model {
-      +xsd:string modelId [HF]
-      +xsd:string pipelineTag [HF]
-      +xsd:string library [HF]
-      +xsd:string license [HF]
-      +xsd:integer downloads [HF]
-    }
-    class Dataset {
-      +xsd:string datasetId [HF]
-      +xsd:string taskCategory [HF]
-      +xsd:string license [HF]
-    }
-
-    Paper "*" --> "*" Topic : belongs_to_topic [INT]
-    Paper "*" --> "*" Paper : similar_to [INT]
-    Paper "1" --> "*" Person : hasAuthor [OAIRE]
-    Paper "*" --> "*" Organization : acknowledges [INT]
-    Paper "*" --> "*" Project : hasFundingProject [OAIRE]
-    Paper "0..1" --> "1" Venue : publishedIn [OAIRE]
-    Paper "*" --> "*" Model : usesModel [INT+HF]
-    Paper "*" --> "*" Model : evaluatesModel [INT+HF]
-    Paper "*" --> "*" Dataset : usesDataset [INT+HF]
-    Person "*" --> "*" Organization : hasAffiliation [OAIRE]
-    Project "*" --> "1" Organization : hasFunder [OAIRE]
-    Organization "*" --> "0..1" Organization : hasCountry [WD]
-    Model "*" --> "0..1" Organization : developedBy [HF+WD]
-    Dataset "*" --> "0..1" Organization : publishedBy [HF+WD]
+Diagrama por definir
 ```
 
 ## Tabla de clases
