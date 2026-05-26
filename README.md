@@ -52,6 +52,7 @@ python src/05_ner_acks.py            # NER + métricas P/R/F1
 python src/06_enrich.py              # OpenAIRE + Wikidata + HF Hub
 python src/07_build_rdf.py           # genera data/kg.ttl
 python src/08_prov.py                # genera data/prov.ttl
+python src/09_ro_crate.py            # genera el RO-Crate del proyecto en ./ro-crate/
 
 # 4. Levantar el endpoint SPARQL + la demo
 docker-compose up -d
