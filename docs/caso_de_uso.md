@@ -19,7 +19,7 @@ Sobre ese grafo, el pipeline aplica las tecnicas vistas en clase:
 - **Matching texto + HuggingFace** -> modelos y datasets reutilizados (`usesModel`, `usesDataset`).
 - **Enriquecimiento** via OpenAIRE (proyectos y financiacion canonica) y Wikidata (pais, tipo de organización).
 
-s
+
 ## Alcance del sistema.
 
 Este sistema **no pretende** ser representar del estado del arte global de la IA Generativa. Trabaja sobre un corpus acotado seleccionado por el usuario. Las conclusiones que se extraen son **locales al corpus** y no extrapolables al ecosistema mundial.
