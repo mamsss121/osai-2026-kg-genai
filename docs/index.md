@@ -2,7 +2,7 @@
 
 **Acelerador del estado del arte en Inteligencia Artificial Generativa.**
 
-Knowledge Graph construido a partir de un corpus de 30 papers de arXiv sobre IA generativa, enriquecido con datos de OpenAIRE Graph, Wikidata y Hugging Face Hub. Permite a un investigador junior obtener en minutos lo que de otra forma le llevaría 2-3 semanas de lectura manual: subáreas, papers seminales, autores referencia, modelos/datasets compartidos y panorama de financiación.
+Knowledge Graph construido a partir de un corpus de 30 papers de arXiv sobre IA generativa, enriquecido con datos de OpenAIRE Graph, Wikidata y Hugging Face Hub. Permite a un investigador o estudiante obtener en minutos lo que de otra forma le llevaría 2-3 semanas de lectura manual: subáreas, papers seminales, autores referencia, modelos/datasets compartidos y panorama de financiación.
 
 [![DOI](https://zenodo.org/badge/1221481993.svg)](https://doi.org/10.5281/zenodo.20363978)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/mamsss121/osai-2026-kg-genai/blob/main/LICENSE)
@@ -21,17 +21,17 @@ Dado un corpus de 30 PDFs de arXiv sobre Gen AI, el pipeline:
 
 ## Caso de uso
 
-Un investigador junior en IA generativa quiere escribir el capítulo de *state of the art* de su tesis. Tiene 30 papers candidatos pero no tiempo de leerlos todos. Con este sistema obtiene de forma automática las preguntas clave de su revisión: ¿qué sub-áreas dominan? ¿qué papers son redundantes entre sí? ¿qué modelos/datasets aparecen recurrentemente? ¿qué financiación los sostiene?
+Un estudiante o investigador inicia un trabajo sobre el uso de IA Generativa y quiere escribir el capítulo de *state of the art* de su tesis. Tiene 30 papers candidatos pero no tiempo de leerlos todos. Con este sistema obtiene de forma automática las preguntas clave de su revisión: ¿qué sub-áreas dominan? ¿qué papers son redundantes entre sí? ¿qué modelos/datasets aparecen recurrentemente? ¿qué financiación los sostiene?
 
 [Ver caso de uso completo →](caso_de_uso.md)
 
 ## Documentación
 
-- [Instalación y uso](install.md)
-- [Caso de uso completo](caso_de_uso.md)
+- [Instalación](install.md)
+- [Caso de uso](caso_de_uso.md)
 - [Ontología](ontologia.md)
-- [Fuentes externas](fuentes.md)
-- [Declaración de uso de IA](AI_DECLARATION.md)
+- [Fuentes](fuentes.md)
+- [Declaración de IA](AI_DECLARATION.md)
 
 ## Repositorio y citación
 

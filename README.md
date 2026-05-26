@@ -10,52 +10,12 @@ Trabajo del **Grupo 2** de la asignatura *Open Science and Artificial Intelligen
 - Julián Alberto Villafuerte Zevallos
 - Alberto Barranquero Fernández
 
-## Caso de uso
-
-Acelerador de **estado del arte (state of the art)** sobre IA generativa: un investigador junior con 30 papers candidatos de arXiv obtiene en minutos lo que de otra forma le llevaría 2-3 semanas de lectura manual: subáreas, papers seminales, autores referencia, modelos/datasets compartidos y panorama de financiación.
-
-Ver [`docs/caso_de_uso.md`](docs/caso_de_uso.md) para los detalles.
 
 ## Pipeline
 
 ```
-PDFs (30 papers arXiv)
-        |
-        v
-  Extracción (texto + abstract + Acknowledgements)
-        |
-        v
-  Topic modeling (BERTopic) ────── Similitud (sentence-transformers + cosine)
-        |                                 |
-        v                                 v
-  NER en Acknowledgements (HuggingFace) — gold standard + métricas P/R/F1
-        |
-        v
-  Matching contra HuggingFace Hub (Model, Dataset)
-        |
-        v
-  Enriquecimiento (OpenAIRE, Wikidata SPARQL)
-        |
-        v
-  Generación RDF (kg.ttl) + PROV (prov.ttl)
-        |
-        v
-  Fuseki (endpoint SPARQL) + Streamlit (demo)
+Pipeline dibujo por definir
 ```
-
-## Fuentes externas
-
-- **OpenAIRE Graph** (REST) — papers, autores, organizaciones, proyectos/financiación.
-- **HuggingFace Hub** (REST) — modelos y datasets.
-- **Wikidata** (SPARQL) — enriquecimiento de organizaciones, topics y modelos famosos.
-
-Detalle en [`docs/fuentes.md`](docs/fuentes.md).
-
-## Ontología
-
-Clases: `Paper`, `Person`, `Organization`, `Project`, `Topic`, `Venue`, `Model`, `Dataset`.
-Diagrama en [`docs/diagrama/ontologia.png`](docs/diagrama/ontologia.png) (fuente editable `.drawio` en la misma carpeta).
-Documentación en [`docs/ontologia.md`](docs/ontologia.md).
 
 ## Estructura del repositorio
 
@@ -101,12 +61,12 @@ docker-compose up -d
 
 ## Documentación adicional
 
-- [`docs/caso_de_uso.md`](docs/caso_de_uso.md) — caso de uso completo.
-- [`docs/fuentes.md`](docs/fuentes.md) — fuentes externas y mapeo a propiedades.
-- [`docs/ontologia.md`](docs/ontologia.md) — clases, propiedades, decisiones de modelado.
+- [`docs/caso_de_uso.md`](docs/caso_de_uso.md) — caso de uso general y concreto.
+- [`docs/fuentes.md`](docs/fuentes.md) — fuentes externas.
+- [`docs/ontologia.md`](docs/ontologia.md) — clases y propiedades.
 - [`docs/AI_DECLARATION.md`](docs/AI_DECLARATION.md) — declaración de uso de IA.
-- [`docs/ner_evaluation.md`](docs/ner_evaluation.md) — comparación de modelos NER + métricas (en construcción).
-- [`docs/preguntas.md`](docs/preguntas.md) — preguntas para el profesor.
+
+[Link a la documentación](https://acelerador-state-of-the-art.readthedocs.io/es/latest/)
 
 ## Licencia
 

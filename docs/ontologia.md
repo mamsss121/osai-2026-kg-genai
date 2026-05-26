@@ -1,11 +1,11 @@
 # Ontología del proyecto
 
-Esta ontologia incluye los **elementos minimos vistos en clase**:
+Esta ontología incluye los siguientes elementos:
 
 - **Clases base:** `Paper`, `Person`, `Organization`, `Project`, `Topic`.
 - **Clases especificas del dominio GenAI:** `Model`, `Dataset`, `Venue`.
 - **Propiedades base:** `belongs_to_topic`, `similar_to`, `title`, `name`, `acknowledges`.
-- **>=5 propiedades adicionales** procedentes de fuentes externas (OpenAIRE, HuggingFace, Wikidata).
+- **Propiedades adicionales** procedentes de fuentes externas (OpenAIRE, HuggingFace, Wikidata).
 
 
 ## Tags de origen de las propiedades
@@ -37,7 +37,7 @@ Diagrama por definir
 
 ## Tabla de propiedades
 
-### Propiedades base (requeridas por el enunciado)
+### Propiedades base
 
 | Propiedad | Dominio | Rango | Fuente | Descripcion |
 |---|---|---|---|---|
@@ -82,10 +82,3 @@ Diagrama por definir
 | `ns:downloads` | `Model` | `xsd:integer` | [HF] |
 | `ns:datasetId` | `Dataset` | `xsd:string` | [HF] |
 | `ns:taskCategory` | `Dataset` | `xsd:string` | [HF] |
-
-## Notas sobre la modelizacion
-
-- `similar_to` requiere reificacion (o usar n-arios) para guardar el `score`. Lo modelaremos con una clase intermedia `SimilarityRelation` o, mas simple, anotando el score con RDF*.
-- `belongs_to_topic` puede llevar tambien score (probabilidad de pertenencia al topico).
-- `acknowledges` apunta a `Organization`. Si en el NER aparecen personas mencionadas (poco frecuente), se modelaran como `Person` con la misma relacion.
-- `usesModel` vs `evaluatesModel`: distinguimos cuando el paper usa un modelo como base (fine-tuning, prompt engineering...) y cuando lo evalua frente a otros. La distincion final dependera de la heuristica de extraccion (puede empezar como un solo `mentionsModel` y refinarse).
