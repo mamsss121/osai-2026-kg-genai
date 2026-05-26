@@ -1,145 +1,142 @@
-<mxfile host="app.diagrams.net" modified="2026-05-24T00:00:00.000Z" agent="manual" version="24.0.0" type="device">
+<mxfile host="app.diagrams.net" agent="manual">
   <diagram name="Workflow-KG-GenAI" id="workflow-kg-genai">
-    <mxGraphModel dx="2400" dy="2000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="2000" math="0" shadow="0">
+    <mxGraphModel dx="848" dy="575" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="2200" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-
-        <!-- ===================== TITLE ===================== -->
-        <mxCell id="t-title" value="&lt;b&gt;Workflow sketch — KG-GenAI · Grupo 2&lt;/b&gt;&lt;br&gt;Acelerador de estado del arte sobre IA Generativa (30 papers de arXiv)" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="40" y="40" width="600" height="60" as="geometry" />
+        <mxCell id="t-title" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;" value="&lt;b&gt;Workflow sketch — KG-GenAI · Grupo 2&lt;/b&gt;&lt;br&gt;Acelerador de estado del arte sobre IA Generativa (30 papers de arXiv)" vertex="1">
+          <mxGeometry height="60" width="600" x="40" y="40" as="geometry" />
         </mxCell>
-
-        <!-- ===================== LEGEND ===================== -->
-        <mxCell id="l-box" value="&lt;b&gt;Leyenda&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="1700" y="40" width="460" height="220" as="geometry" />
+        <mxCell id="l-box" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;align=left;verticalAlign=top;" value="&lt;b&gt;Leyenda&lt;/b&gt;" vertex="1">
+          <mxGeometry height="260" width="460" x="1700" y="40" as="geometry" />
         </mxCell>
-        <mxCell id="l-script" value="Script Python (paso del pipeline)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1720" y="80" width="220" height="32" as="geometry" />
+        <mxCell id="l-script" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="Script Python (paso del pipeline)" vertex="1">
+          <mxGeometry height="32" width="220" x="1720" y="80" as="geometry" />
         </mxCell>
-        <mxCell id="l-data" value="Fichero de datos (entrada/salida)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1720" y="120" width="220" height="32" as="geometry" />
+        <mxCell id="l-data" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="Fichero de datos (entrada/salida)" vertex="1">
+          <mxGeometry height="32" width="220" x="1720" y="120" as="geometry" />
         </mxCell>
-        <mxCell id="l-ext" value="Servicio externo (API / Docker)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="1720" y="160" width="220" height="32" as="geometry" />
+        <mxCell id="l-ext" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;dashed=1;" value="Servicio externo (API / Docker)" vertex="1">
+          <mxGeometry height="32" width="220" x="1720" y="160" as="geometry" />
         </mxCell>
-        <mxCell id="l-manual" value="★ Intervención humana (anotación)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1720" y="200" width="220" height="32" as="geometry" />
+        <mxCell id="l-manual" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="★ Intervención humana (anotación)" vertex="1">
+          <mxGeometry height="32" width="220" x="1720" y="200" as="geometry" />
         </mxCell>
-
-        <!-- ===================== INPUT ===================== -->
-        <mxCell id="d-pdfs" value="30 PDFs (arXiv)&#10;data/papers/" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="900" y="200" width="220" height="60" as="geometry" />
+        <mxCell id="l-helper" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" value="Módulo helper (importado por scripts)" vertex="1">
+          <mxGeometry height="32" width="220" x="1720" y="240" as="geometry" />
         </mxCell>
-
-        <!-- ===================== STEP 01 ===================== -->
-        <mxCell id="s-01" value="01_build_corpus.py&#10;(consulta arXiv API)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="900" y="320" width="220" height="60" as="geometry" />
+        <mxCell id="d-pdfs" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontStyle=1;" value="30 PDFs (arXiv)&#xa;data/papers/" vertex="1">
+          <mxGeometry height="60" width="220" x="900" y="200" as="geometry" />
         </mxCell>
-        <mxCell id="e-arxiv" value="arXiv API&#10;(REST)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="1200" y="320" width="160" height="60" as="geometry" />
+        <mxCell id="s-provlog" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;fontStyle=2;" value="_prov_logger.py&#xa;(start_activity / end_activity)&#xa;captura timestamps, params, SHA-256, Git commit" vertex="1">
+          <mxGeometry height="70" width="260" x="40" y="200" as="geometry" />
         </mxCell>
-        <mxCell id="d-corpus" value="data/corpus.csv" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="900" y="440" width="220" height="60" as="geometry" />
+        <mxCell id="d-runlog" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="data/run_log.json&#xa;(bitácora de cada ejecución)" vertex="1">
+          <mxGeometry height="60" width="260" x="40" y="380" as="geometry" />
         </mxCell>
-
-        <!-- ===================== STEP 02 ===================== -->
-        <mxCell id="s-02" value="02_extract_text.py&#10;(parse TEI XML)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="900" y="560" width="220" height="60" as="geometry" />
+        <mxCell id="s-01" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="01_build_corpus.py&#xa;(consulta arXiv API)" vertex="1">
+          <mxGeometry height="60" width="220" x="900" y="320" as="geometry" />
         </mxCell>
-        <mxCell id="e-grobid" value="Grobid&#10;(Docker, port 8070)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="1200" y="560" width="160" height="60" as="geometry" />
+        <mxCell id="e-arxiv" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;dashed=1;" value="arXiv API&#xa;(REST)" vertex="1">
+          <mxGeometry height="60" width="160" x="1200" y="320" as="geometry" />
         </mxCell>
-        <mxCell id="d-extracted" value="data/extracted/*.json&#10;(title, abstract, authors,&#10;body, acknowledgements)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="900" y="680" width="220" height="80" as="geometry" />
+        <mxCell id="d-corpus" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="data/corpus.csv" vertex="1">
+          <mxGeometry height="60" width="220" x="900" y="440" as="geometry" />
         </mxCell>
-
-        <!-- ===================== PARALLEL STEPS 03-06 ===================== -->
-        <mxCell id="s-03" value="03_topic_modeling.py&#10;(BERTopic + sentence-transformers)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="120" y="830" width="220" height="70" as="geometry" />
+        <mxCell id="s-02" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="02_extract_text.py&#xa;(parse TEI XML)" vertex="1">
+          <mxGeometry height="60" width="220" x="900" y="560" as="geometry" />
         </mxCell>
-        <mxCell id="s-04" value="04_similarity.py&#10;(cosine sobre embeddings)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="440" y="830" width="220" height="70" as="geometry" />
+        <mxCell id="e-grobid" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;dashed=1;" value="Grobid&#xa;(Docker, port 8070)" vertex="1">
+          <mxGeometry height="60" width="160" x="1200" y="560" as="geometry" />
         </mxCell>
-        <mxCell id="s-05" value="05_ner_acks.py&#10;(HuggingFace NER, 2 modelos)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="900" y="830" width="220" height="70" as="geometry" />
+        <mxCell id="d-extracted" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="data/extracted/*.json&#xa;(title, abstract, authors,&#xa;body, acknowledgements)" vertex="1">
+          <mxGeometry height="80" width="220" x="900" y="680" as="geometry" />
         </mxCell>
-        <mxCell id="s-06" value="06_enrich.py&#10;(consultas externas)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1360" y="830" width="220" height="70" as="geometry" />
+        <mxCell id="s-03" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="03_topic_modeling.py&#xa;(BERTopic + sentence-transformers)" vertex="1">
+          <mxGeometry height="70" width="220" x="120" y="830" as="geometry" />
         </mxCell>
-
-        <!-- External services for parallel steps -->
-        <mxCell id="e-hf-st" value="HuggingFace Hub&#10;(sentence-transformers)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="120" y="700" width="220" height="50" as="geometry" />
+        <mxCell id="s-04" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="04_similarity.py&#xa;(cosine sobre embeddings)" vertex="1">
+          <mxGeometry height="70" width="220" x="440" y="830" as="geometry" />
         </mxCell>
-        <mxCell id="e-hf-ner" value="HuggingFace Hub&#10;(roberta-large + bert-base-NER)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="900" y="700" width="220" height="50" as="geometry" />
+        <mxCell id="s-05" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="05_ner_acks.py&#xa;(HuggingFace NER, 2 modelos&#xa;+ métricas P/R/F1)" vertex="1">
+          <mxGeometry height="70" width="220" x="900" y="830" as="geometry" />
         </mxCell>
-        <mxCell id="e-oaire" value="OpenAIRE Graph&#10;HuggingFace Hub&#10;Wikidata SPARQL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="1360" y="700" width="220" height="50" as="geometry" />
+        <mxCell id="s-06" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="06_enrich.py&#xa;(consultas externas)" vertex="1">
+          <mxGeometry height="70" width="220" x="1360" y="830" as="geometry" />
         </mxCell>
-
-        <!-- Manual gold standard annotation -->
-        <mxCell id="d-gold" value="★ gold_standard_ner.jsonl&#10;(anotación manual,&#10;8 papers · Grupo 2)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=2;" vertex="1" parent="1">
-          <mxGeometry x="660" y="940" width="220" height="70" as="geometry" />
+        <mxCell id="e-hf-st" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;dashed=1;" value="HuggingFace Hub&#xa;(sentence-transformers)" vertex="1">
+          <mxGeometry height="50" width="220" x="120" y="700" as="geometry" />
         </mxCell>
-
-        <!-- Outputs of parallel steps -->
-        <mxCell id="d-topics" value="data/topics.json&#10;data/paper_topics.json&#10;data/embeddings.npy" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="120" y="1050" width="220" height="70" as="geometry" />
+        <mxCell id="e-hf-ner" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;dashed=1;" value="HuggingFace Hub&#xa;(roberta-large + bert-base-NER)" vertex="1">
+          <mxGeometry height="50" width="220" x="1090" y="930" as="geometry" />
         </mxCell>
-        <mxCell id="d-sim" value="data/similarity.json" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="440" y="1050" width="220" height="50" as="geometry" />
+        <mxCell id="e-oaire" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;dashed=1;" value="OpenAIRE Graph&#xa;HuggingFace Hub&#xa;Wikidata SPARQL" vertex="1">
+          <mxGeometry height="50" width="220" x="1360" y="640" as="geometry" />
         </mxCell>
-        <mxCell id="d-ner" value="data/ner_results.json&#10;data/ner_metrics.json&#10;(precision/recall/F1)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="900" y="1050" width="220" height="70" as="geometry" />
+        <mxCell id="d-gold" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=2;" value="★ gold_standard_ner.jsonl&#xa;(anotación manual,&#xa;8 papers · 56 entidades&#xa;Grupo 2)" vertex="1">
+          <mxGeometry height="80" width="220" x="660" y="930" as="geometry" />
         </mxCell>
-        <mxCell id="d-enrich" value="data/enrichment.json&#10;data/orgs_wikidata.json" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1360" y="1050" width="220" height="60" as="geometry" />
+        <mxCell id="d-topics" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="data/topics.json&#xa;data/paper_topics.json&#xa;data/embeddings.npy" vertex="1">
+          <mxGeometry height="70" width="220" x="120" y="1050" as="geometry" />
         </mxCell>
-
-        <!-- ===================== STEP 07 ===================== -->
-        <mxCell id="s-07" value="07_build_rdf.py&#10;(agrega todo, RDFlib + ontología ns:)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="800" y="1220" width="280" height="70" as="geometry" />
+        <mxCell id="d-sim" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="data/similarity.json" vertex="1">
+          <mxGeometry height="50" width="220" x="440" y="1050" as="geometry" />
         </mxCell>
-        <mxCell id="d-kg" value="data/kg.ttl&#10;(Knowledge Graph en Turtle)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="800" y="1340" width="280" height="60" as="geometry" />
+        <mxCell id="d-ner" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="data/ner_results.json&#xa;data/ner_metrics.json&#xa;(P=0.41 R=0.74 F1=0.46)" vertex="1">
+          <mxGeometry height="70" width="220" x="900" y="1050" as="geometry" />
         </mxCell>
-
-        <!-- ===================== STEP 08 (PROV) ===================== -->
-        <mxCell id="s-08" value="08_prov.py&#10;(traza PROV-O)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="1180" y="1340" width="220" height="60" as="geometry" />
+        <mxCell id="d-enrich" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="data/enrichment.json&#xa;data/orgs_wikidata.json" vertex="1">
+          <mxGeometry height="60" width="220" x="1360" y="1050" as="geometry" />
         </mxCell>
-        <mxCell id="d-prov" value="data/prov.ttl" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1180" y="1440" width="220" height="50" as="geometry" />
+        <mxCell id="s-07" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="07_build_rdf.py&#xa;(agrega todo, rdflib + ontología ns:)" vertex="1">
+          <mxGeometry height="70" width="280" x="800" y="1220" as="geometry" />
         </mxCell>
-
-        <!-- ===================== DEMO ===================== -->
-        <mxCell id="e-fuseki" value="Fuseki&#10;(endpoint SPARQL)&#10;localhost:3030" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="700" y="1500" width="200" height="70" as="geometry" />
+        <mxCell id="d-kg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontStyle=1;" value="data/kg.ttl&#xa;(Knowledge Graph en Turtle,&#xa;1110 triples)" vertex="1">
+          <mxGeometry height="70" width="280" x="800" y="1340" as="geometry" />
         </mxCell>
-        <mxCell id="s-app" value="streamlit_app.py&#10;(demo interactiva)&#10;localhost:8501" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="980" y="1500" width="220" height="70" as="geometry" />
+        <mxCell id="s-08" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="08_prov.py&#xa;(traza PROV-O,&#xa;ideal approach)" vertex="1">
+          <mxGeometry height="70" width="220" x="1180" y="1340" as="geometry" />
         </mxCell>
-        <mxCell id="t-output" value="📊 Salidas finales:&lt;br&gt;• KG navegable (`kg.ttl`)&lt;br&gt;• Endpoint SPARQL (Fuseki)&lt;br&gt;• Demo Streamlit (6 vistas)&lt;br&gt;• Trazabilidad PROV (`prov.ttl`)&lt;br&gt;• Métricas P/R/F1 NER" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
-          <mxGeometry x="1400" y="1500" width="320" height="120" as="geometry" />
+        <mxCell id="d-prov" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="data/prov.ttl&#xa;(268 triples)" vertex="1">
+          <mxGeometry height="50" width="220" x="1180" y="1450" as="geometry" />
         </mxCell>
-
-        <!-- ===================== EDGES ===================== -->
-        <!-- Input flow -->
-        <mxCell id="e1" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="d-pdfs" target="s-01">
+        <mxCell id="s-09" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="09_ro_crate.py&#xa;(empaquetado FAIR)" vertex="1">
+          <mxGeometry height="70" width="220" x="420" y="1340" as="geometry" />
+        </mxCell>
+        <mxCell id="d-rocrate" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="ro-crate/&#xa;ro-crate-metadata.json&#xa;(JSON-LD FAIR)" vertex="1">
+          <mxGeometry height="60" width="220" x="420" y="1450" as="geometry" />
+        </mxCell>
+        <mxCell id="e-zenodo" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;dashed=1;" value="Zenodo&#xa;DOI: 10.5281/zenodo.20363978" vertex="1">
+          <mxGeometry height="60" width="220" x="420" y="1550" as="geometry" />
+        </mxCell>
+        <mxCell id="e-fuseki" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;dashed=1;" value="Fuseki&#xa;(endpoint SPARQL)&#xa;localhost:3030" vertex="1">
+          <mxGeometry height="70" width="220" x="800" y="1560" as="geometry" />
+        </mxCell>
+        <mxCell id="s-app" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" value="streamlit_app.py&#xa;(demo interactiva)&#xa;localhost:8501" vertex="1">
+          <mxGeometry height="70" width="220" x="1080" y="1560" as="geometry" />
+        </mxCell>
+        <mxCell id="t-output" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;" value="📊 Salidas finales:&lt;br&gt;• KG navegable (`kg.ttl`, 1110 triples)&lt;br&gt;• Endpoint SPARQL (Fuseki)&lt;br&gt;• Demo Streamlit (6 vistas)&lt;br&gt;• Trazabilidad PROV (`prov.ttl`)&lt;br&gt;• RO-Crate FAIR + DOI Zenodo&lt;br&gt;• Métricas P/R/F1 NER" vertex="1">
+          <mxGeometry height="140" width="320" x="1400" y="1560" as="geometry" />
+        </mxCell>
+        <mxCell id="e-pl-1" edge="1" parent="1" source="s-provlog" style="endArrow=open;html=1;rounded=0;strokeColor=#9673a6;dashed=1;startArrow=none;" target="s-01">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e2" style="endArrow=classic;html=1;rounded=0;strokeColor=#b85450;dashed=1;" edge="1" parent="1" source="s-01" target="e-arxiv">
+        <mxCell id="e-pl-runlog" edge="1" parent="1" source="s-provlog" style="endArrow=classic;html=1;rounded=0;strokeColor=#9673a6;" target="d-runlog">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e3" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="s-01" target="d-corpus">
+        <mxCell id="e1" edge="1" parent="1" source="d-pdfs" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" target="s-01">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e4" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="d-corpus" target="s-02">
+        <mxCell id="e2" edge="1" parent="1" source="s-01" style="endArrow=classic;html=1;rounded=0;strokeColor=#b85450;dashed=1;" target="e-arxiv">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e5" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="d-pdfs" target="s-02">
+        <mxCell id="e3" edge="1" parent="1" source="s-01" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" target="d-corpus">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="d-corpus" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" target="s-02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="d-pdfs" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" target="s-02">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="700" y="230" />
@@ -147,15 +144,13 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="e6" style="endArrow=classic;html=1;rounded=0;strokeColor=#b85450;dashed=1;" edge="1" parent="1" source="s-02" target="e-grobid">
+        <mxCell id="e6" edge="1" parent="1" source="s-02" style="endArrow=classic;html=1;rounded=0;strokeColor=#b85450;dashed=1;" target="e-grobid">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e7" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="s-02" target="d-extracted">
+        <mxCell id="e7" edge="1" parent="1" source="s-02" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" target="d-extracted">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- Branch to parallel steps -->
-        <mxCell id="e8" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="d-extracted" target="s-03">
+        <mxCell id="e8" edge="1" parent="1" source="d-extracted" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" target="s-03">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="230" y="720" />
@@ -163,7 +158,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="e9" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="d-extracted" target="s-04">
+        <mxCell id="e9" edge="1" parent="1" source="d-extracted" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" target="s-04">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="550" y="720" />
@@ -171,10 +166,10 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="e10" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="d-extracted" target="s-05">
+        <mxCell id="e10" edge="1" parent="1" source="d-extracted" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" target="s-05">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e11" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="d-extracted" target="s-06">
+        <mxCell id="e11" edge="1" parent="1" source="d-extracted" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" target="s-06">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1470" y="720" />
@@ -182,7 +177,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="e12" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="d-corpus" target="s-06">
+        <mxCell id="e12" edge="1" parent="1" source="d-corpus" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" target="s-06">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1600" y="470" />
@@ -190,44 +185,36 @@
             </Array>
           </mxGeometry>
         </mxCell>
-
-        <!-- External APIs to parallel steps -->
-        <mxCell id="e13" style="endArrow=classic;html=1;rounded=0;strokeColor=#b85450;dashed=1;" edge="1" parent="1" source="e-hf-st" target="s-03">
+        <mxCell id="e13" edge="1" parent="1" source="e-hf-st" style="endArrow=classic;html=1;rounded=0;strokeColor=#b85450;dashed=1;" target="s-03">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e14" style="endArrow=classic;html=1;rounded=0;strokeColor=#b85450;dashed=1;" edge="1" parent="1" source="e-hf-ner" target="s-05">
+        <mxCell id="e14" edge="1" parent="1" source="e-hf-ner" style="endArrow=classic;html=1;rounded=0;strokeColor=#b85450;dashed=1;" target="s-05">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e15" style="endArrow=classic;html=1;rounded=0;strokeColor=#b85450;dashed=1;" edge="1" parent="1" source="e-oaire" target="s-06">
+        <mxCell id="e15" edge="1" parent="1" source="e-oaire" style="endArrow=classic;html=1;rounded=0;strokeColor=#b85450;dashed=1;" target="s-06">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- Gold standard manual annotation -->
-        <mxCell id="e16" style="endArrow=classic;html=1;rounded=0;strokeColor=#82b366;dashed=1;" edge="1" parent="1" source="d-gold" target="s-05">
+        <mxCell id="e16" edge="1" parent="1" source="d-gold" style="endArrow=classic;html=1;rounded=0;strokeColor=#82b366;dashed=1;" target="s-05">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="880" y="975" />
-              <mxPoint x="990" y="975" />
+              <mxPoint x="880" y="970" />
+              <mxPoint x="990" y="970" />
             </Array>
           </mxGeometry>
         </mxCell>
-
-        <!-- Parallel step outputs -->
-        <mxCell id="e17" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="s-03" target="d-topics">
+        <mxCell id="e17" edge="1" parent="1" source="s-03" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" target="d-topics">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e18" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="s-04" target="d-sim">
+        <mxCell id="e18" edge="1" parent="1" source="s-04" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" target="d-sim">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e19" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="s-05" target="d-ner">
+        <mxCell id="e19" edge="1" parent="1" source="s-05" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" target="d-ner">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e20" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="s-06" target="d-enrich">
+        <mxCell id="e20" edge="1" parent="1" source="s-06" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" target="d-enrich">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- Embeddings.npy reused by 04 -->
-        <mxCell id="e21" value="reusa embeddings" style="endArrow=classic;html=1;rounded=0;strokeColor=#888888;dashed=1;fontSize=10;" edge="1" parent="1" source="d-topics" target="s-04">
+        <mxCell id="e21" edge="1" parent="1" source="d-topics" style="endArrow=classic;html=1;rounded=0;strokeColor=#888888;dashed=1;fontSize=10;" target="s-04" value="reusa embeddings">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="400" y="1085" />
@@ -235,9 +222,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-
-        <!-- Merge into 07 -->
-        <mxCell id="e22" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="d-topics" target="s-07">
+        <mxCell id="e22" edge="1" parent="1" source="d-topics" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" target="s-07">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="230" y="1180" />
@@ -245,7 +230,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="e23" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="d-sim" target="s-07">
+        <mxCell id="e23" edge="1" parent="1" source="d-sim" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" target="s-07">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="550" y="1180" />
@@ -253,10 +238,10 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="e24" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="d-ner" target="s-07">
+        <mxCell id="e24" edge="1" parent="1" source="d-ner" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" target="s-07">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e25" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="d-enrich" target="s-07">
+        <mxCell id="e25" edge="1" parent="1" source="d-enrich" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" target="s-07">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1470" y="1180" />
@@ -264,7 +249,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="e26" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;dashed=1;strokeColor=#888888;" edge="1" parent="1" source="d-corpus" target="s-07">
+        <mxCell id="e26" edge="1" parent="1" source="d-corpus" style="endArrow=classic;html=1;rounded=0;strokeColor=#888888;dashed=1;" target="s-07">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="640" y="470" />
@@ -272,31 +257,50 @@
             </Array>
           </mxGeometry>
         </mxCell>
-
-        <!-- KG to PROV and consumers -->
-        <mxCell id="e27" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="s-07" target="d-kg">
+        <mxCell id="e27" edge="1" parent="1" source="s-07" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" target="d-kg">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e28" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="d-kg" target="s-08">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e29" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="s-08" target="d-prov">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e30" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="d-kg" target="e-fuseki">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e31" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="e-fuseki" target="s-app">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e32" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;dashed=1;" edge="1" parent="1" source="d-kg" target="s-app">
+        <mxCell id="e-runlog-08" edge="1" parent="1" source="d-runlog" style="endArrow=classic;html=1;rounded=0;strokeColor=#9673a6;" target="s-08">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1090" y="1500" />
+              <mxPoint x="170" y="1375" />
+              <mxPoint x="1180" y="1375" />
             </Array>
           </mxGeometry>
         </mxCell>
-
+        <mxCell id="e29" edge="1" parent="1" source="s-08" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" target="d-prov">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-kg-09" edge="1" parent="1" source="d-kg" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" target="s-09">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-prov-09" edge="1" parent="1" source="d-prov" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;dashed=1;" target="s-09">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1290" y="1530" />
+              <mxPoint x="530" y="1530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-09-rocrate" edge="1" parent="1" source="s-09" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" target="d-rocrate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-rocrate-zenodo" edge="1" parent="1" source="d-rocrate" style="endArrow=classic;html=1;rounded=0;strokeColor=#b85450;dashed=1;" target="e-zenodo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e30" edge="1" parent="1" source="d-kg" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" target="e-fuseki">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e31" edge="1" parent="1" source="e-fuseki" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;" target="s-app">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e32" edge="1" parent="1" source="d-kg" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;dashed=1;" target="s-app">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1180" y="1560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
