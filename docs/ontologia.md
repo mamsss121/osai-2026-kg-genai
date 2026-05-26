@@ -19,7 +19,7 @@ Esta ontología incluye los siguientes elementos:
 
 ## Diagrama 
 
-![Diagrama de la Ontología](docs\diagrama\ACEKG-Ont.png)
+![Diagrama de la Ontología](diagrama/ACEKG-Ont.png)
 
 ## Tabla de clases
 
