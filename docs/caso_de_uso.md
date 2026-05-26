@@ -19,17 +19,7 @@ Sobre ese grafo, el pipeline aplica las tecnicas vistas en clase:
 - **Matching texto + HuggingFace** -> modelos y datasets reutilizados (`usesModel`, `usesDataset`).
 - **Enriquecimiento** via OpenAIRE (proyectos y financiacion canonica) y Wikidata (pais, tipo de organización).
 
-## Decisiones que habilita
-
-El estudiante puede tomar las siguientes decisiones para estructurar su estado del arte:
-
-1. **Estructurar el capitulo por subáreas**: el topic modeling le dice cuantos sub-temas distintos contiene el corpus y como se solapan.
-2. **Identificar los papers seminales** dentro del corpus: los mas conectados por `similar_to` o el centroide de cada cluster son los "imprescindibles".
-3. **Detectar autores referencia**: las personas que aparecen en mas de N papers son candidatos naturales para citar repetidamente.
-4. **Listar modelos y datasets compartidos**: los que aparecen en >1 paper merecen una subsección dedicada en la revisión.
-5. **Ver el panorama de financiación**: detectar que proyectos publicos europeos / agencias estan detras del avance en cada subtema.
-6. **Descartar redundancias**: si dos papers son muy similares y comparten autores, posiblemente baste con citar uno.
-
+s
 ## Alcance del sistema.
 
 Este sistema **no pretende** ser representar del estado del arte global de la IA Generativa. Trabaja sobre un corpus acotado seleccionado por el usuario. Las conclusiones que se extraen son **locales al corpus** y no extrapolables al ecosistema mundial.
