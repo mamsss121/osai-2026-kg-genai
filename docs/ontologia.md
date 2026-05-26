@@ -17,10 +17,11 @@ Esta ontología incluye los siguientes elementos:
 | **[WD]** | Wikidata | SPARQL |
 | **[INT]** | Procesado interno (topic modeling, similitud, NER) | - |
 
-## Diagrama 
-```mermaid
-Diagrama por definir
-```
+## Diagrama
+
+![Diagrama de la ontología](diagrama/ontologia.png)
+
+Fuente editable: [`diagrama/ontologia.drawio`](diagrama/ontologia.drawio) (notación Chowlk, abrir con [diagrams.net](https://app.diagrams.net)).
 
 ## Tabla de clases
 
