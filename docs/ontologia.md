@@ -18,9 +18,8 @@ Esta ontología incluye los siguientes elementos:
 | **[INT]** | Procesado interno (topic modeling, similitud, NER) | - |
 
 ## Diagrama 
-```mermaid
-Diagrama por definir
-```
+
+![Diagrama de la Ontología](docs\diagrama\ACEKG-Ont.png)
 
 ## Tabla de clases
 
