@@ -11,12 +11,6 @@ Trabajo del **Grupo 2** de la asignatura *Open Science and Artificial Intelligen
 - Alberto Barranquero Fernández
 
 
-## Pipeline
-
-```
-Pipeline dibujo por definir
-```
-
 ## Estructura del repositorio
 
 ```
