@@ -156,7 +156,7 @@
       ]
     },
     "ner": {
-      "started_at": "2026-05-24T11:46:18Z",
+      "started_at": "2026-05-26T00:42:49Z",
       "params": {
         "models": [
           "Jean-Baptiste/roberta-large-ner-english",
@@ -178,15 +178,15 @@
           "path": "data/gold_standard_ner.jsonl",
           "exists": true,
           "type": "file",
-          "size_bytes": 8354,
-          "sha256": "904c67454a443e40f898d18dd0513456db36ed14bb60775f3b69d7169e1b89f7"
+          "size_bytes": 6953,
+          "sha256": "86051dd11f74e861a0e4901fc68c3b9f0d23cdb316d83d3cc8942d17516f87ed"
         }
       ],
-      "git_commit": "586dc034efbd4c240f32e29ec610de6ad7d239f3",
+      "git_commit": "028ee78fd8f8e5dbdb44d95b3ea249bf36130bed",
       "host": "DESKTOP-SRNQH6D",
       "user": "abarr",
       "platform": "Windows-10-10.0.26200-SP0",
-      "ended_at": "2026-05-24T11:46:28Z",
+      "ended_at": "2026-05-26T00:43:29Z",
       "outputs": [
         {
           "path": "data/ner_results.json",
@@ -199,8 +199,8 @@
           "path": "data/ner_metrics.json",
           "exists": true,
           "type": "file",
-          "size_bytes": 1340,
-          "sha256": "ca256541db6961d04a274c055a905127f0adf86c02954de52414137f2a01eadb"
+          "size_bytes": 1382,
+          "sha256": "81365fe196f1ed44608ae7bbb6437fce41971327a9398f21ea184401a478982a"
         }
       ]
     },
