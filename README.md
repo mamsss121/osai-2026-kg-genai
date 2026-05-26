@@ -1,4 +1,4 @@
-# KG-GenAI — Knowledge Graph para revisión bibliográfica de papers de IA Generativa
+# AcelEdA-KG — Acelerador del estado del arte en GenAI con KG.
 [![DOI](https://zenodo.org/badge/1221481993.svg)](https://doi.org/10.5281/zenodo.20363978)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![CI](https://github.com/mamsss121/osai-2026-kg-genai/actions/workflows/ci.yml/badge.svg)](https://github.com/mamsss121/osai-2026-kg-genai/actions/workflows/ci.yml)
