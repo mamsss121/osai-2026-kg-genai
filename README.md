@@ -61,17 +61,18 @@ docker-compose up -d
 ```
 
 ## Documentación adicional
-
+- [`docs/index.md`](docs/index.md) — índice de la documentación.
+- [`docs/install.md`](docs/install.md) — guía de instalación.
 - [`docs/caso_de_uso.md`](docs/caso_de_uso.md) — caso de uso general y concreto.
-- [`docs/fuentes.md`](docs/fuentes.md) — fuentes externas.
 - [`docs/ontologia.md`](docs/ontologia.md) — clases y propiedades.
+- [`docs/fuentes.md`](docs/fuentes.md) — fuentes externas.
 - [`docs/AI_DECLARATION.md`](docs/AI_DECLARATION.md) — declaración de uso de IA.
 
 [Link a la documentación](https://acelerador-state-of-the-art.readthedocs.io/es/latest/)
 
-## Licencia
+## Presentación del trabajo
 
-MIT License
+[Presentación Práctica 2](https://docs.google.com/presentation/d/1EfEEik2Q48WPJXtfNmTgQlwoBWDhxtddkxzjiKEKNS4/edit?usp=sharing)
 
 ## Citación
 
