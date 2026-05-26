@@ -7,28 +7,9 @@ Un **estudiante o investigador** inicia un trabajo en sobre el uso de IA Generat
 Estudiante de grado de ingeniería informática se plantea realizar su TFG sobre el uso de IA generativa en consultas de medicina de familia. Para ello, debe hacer una investigación profunda sobre el estado del arte de las herramientas y modelos actuales utilizados en el área de la salud. Hacerlo a mano lleva **2-3 semanas** y es muy fácil que se le escapen conexiones. 
 
 
-## Solucion propuesta
+## Solución propuesta
 
-Un sistema que materialice las relaciones entre los 30 papers a través de un KG, sus autores, organizaciones, financiacion, modelos y datasets. El investigador carga el corpus, ejecuta el pipeline y obtiene un grafo explorable mediante SPARQL desde una pequena aplicacion cliente.
-
-Sobre ese grafo, el pipeline aplica las tecnicas vistas en clase:
-
-- **Topic modeling** (BERTopic + HuggingFace) sobre los abstracts -> subareas (`Topic`).
-- **Similitud por embeddings** del abstract (sentence-transformers) -> propiedad `similar_to`.
-- **NER** (HuggingFace) sobre los Acknowledgements -> organizaciones financiadoras (`acknowledges`, `hasFundingProject`).
-- **Matching texto + HuggingFace** -> modelos y datasets reutilizados (`usesModel`, `usesDataset`).
-- **Enriquecimiento** via OpenAIRE (proyectos y financiacion canonica) y Wikidata (pais, tipo de organización).
-
-## Decisiones que habilita
-
-El estudiante puede tomar las siguientes decisiones para estructurar su estado del arte:
-
-1. **Estructurar el capitulo por subáreas**: el topic modeling le dice cuantos sub-temas distintos contiene el corpus y como se solapan.
-2. **Identificar los papers seminales** dentro del corpus: los mas conectados por `similar_to` o el centroide de cada cluster son los "imprescindibles".
-3. **Detectar autores referencia**: las personas que aparecen en mas de N papers son candidatos naturales para citar repetidamente.
-4. **Listar modelos y datasets compartidos**: los que aparecen en >1 paper merecen una subsección dedicada en la revisión.
-5. **Ver el panorama de financiación**: detectar que proyectos publicos europeos / agencias estan detras del avance en cada subtema.
-6. **Descartar redundancias**: si dos papers son muy similares y comparten autores, posiblemente baste con citar uno.
+El sistema construye un Knowledge Graph que conecta los 30 papers con sus autores, organizaciones, financiación, modelos y datasets, explorable vía SPARQL desde una app cliente. El pipeline encadena Grobid (extracción), BERTopic (topic modeling), sentence-transformers (similitud), NER con HuggingFace (acknowledgements), matching contra HuggingFace Hub (modelos/datasets) y enriquecimiento final con OpenAIRE y Wikidata.
 
 ## Alcance del sistema.
 
