@@ -2,7 +2,7 @@
 
 **Acelerador del estado del arte en Inteligencia Artificial Generativa.**
 
-Knowledge Graph construido a partir de un corpus de 30 papers de arXiv sobre IA generativa, enriquecido con datos de OpenAIRE Graph, Wikidata y Hugging Face Hub. Permite a un investigador o estudiante obtener en minutos lo que de otra forma le llevaría 2-3 semanas de lectura manual: subáreas, papers seminales, autores referencia, modelos/datasets compartidos y panorama de financiación.
+Knowledge Graph construido a partir de un corpus de 30 papers de arXiv sobre IA generativa, enriquecido con datos de OpenAIRE Graph, Wikidata y Hugging Face Hub. Permite obtener en minutos lo que de otra forma llevaría 2-3 semanas de lectura manual: subáreas, papers seminales, autores referencia, modelos/datasets compartidos y panorama de financiación.
 
 [![DOI](https://zenodo.org/badge/1221481993.svg)](https://doi.org/10.5281/zenodo.20363978)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/mamsss121/osai-2026-kg-genai/blob/main/LICENSE)
